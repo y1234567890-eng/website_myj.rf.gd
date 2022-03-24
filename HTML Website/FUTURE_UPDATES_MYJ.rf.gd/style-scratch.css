@@ -555,3 +555,12 @@ input[type=reset]:hover {
     color: #FFFFFF;
     text-decoration: underline;
 }
+
+#coming_soon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    font-family: "Outfit", sans-serif;
+}
