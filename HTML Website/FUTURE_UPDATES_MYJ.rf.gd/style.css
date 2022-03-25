@@ -89,12 +89,12 @@ nav {
 
 #intro {
     display: flex;
-    justify-content: left;
-    align-items: left;
-    text-align: left;
     width: 100%;
     background: #FFFFFF;
-    height: 300px;
+    /* height: 300px; */
+    height: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -124,7 +124,10 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 300px;
+    /* height: 300px; */
+    height: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
     width: 100%;
 }
 
@@ -165,12 +168,12 @@ nav {
 
 #why-choose-us {
     display: flex;
-    justify-content: left;
-    align-items: left;
-    text-align: left;
     width: 100%;
     background: #FFFFFF;
-    height: 300px;
+    /* height: 300px; */
+    height: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -202,12 +205,12 @@ nav {
 
 #technology-at-your-fingertips {
     display: flex;
-    justify-content: left;
-    align-items: left;
-    text-align: left;
     width: 100%;
     background: rgb(233, 233, 233);
-    height: 300px;
+    /* height: 300px; */
+    height: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -229,12 +232,12 @@ nav {
 
 #no-1-service {
     display: flex;
-    justify-content: left;
-    align-items: left;
-    text-align: left;
     width: 100%;
     background: #FFFFFF;
-    height: 300px;
+    /* height: 300px; */
+    height: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -269,7 +272,10 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 600px;
+    /* height: 600px; */
+    height: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
     width: 100%;
 }
 
@@ -318,12 +324,12 @@ nav {
 
 #long-way {
     display: flex;
-    justify-content: left;
-    align-items: left;
-    text-align: left;
     width: 100%;
     background: #d0dcf4;
-    height: 300px;
+    /* height: 300px; */
+    height: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -357,16 +363,19 @@ nav {
 
 #reviews {
     display: flex;
-    justify-content: left;
+    /* justify-content: left;
     align-items: left;
-    text-align: left;
+    text-align: left; */
     width: 100%;
     background: #ffffff;
-    height: 600px;
+    /* height: 600px; */
     align-items: center;
     justify-content: center;
     text-align: center;
     font-family: "Spline Sans", sans-serif;
+    height: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 #reviews h1 {
@@ -389,23 +398,24 @@ nav {
     padding-top: 1%;
 }
 
-#inner-reviews {
+
+/* #inner-reviews {
     margin-right: 10%;
     margin-left: 10%;
-}
+} */
 
 #user-reviews {
     background-color: #FFFFFF;
     overflow: auto;
-    white-space: nowrap;
+    /* white-space: nowrap; */
     width: 70%;
     margin-left: auto;
     margin-right: auto;
 }
 
 #contact-us {
-    background: #FEF250;
-    display: flex;
+    background: rgb(233, 233, 233);
+    /* display: flex; */
     margin: 0;
     font-family: "Spline Sans", sans-serif;
     align-items: center;
@@ -413,9 +423,35 @@ nav {
     text-align: center;
     padding-left: 2%;
     padding-right: 2%;
+    height: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
-input[type=text] {
+#inner-contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0%;
+}
+
+.zoom {
+    /* box-sizing: border-box; */
+    background-color: #d0dcf4;
+    border: #d0dcf4;
+    border-radius: 12px;
+    transition: 0.4s;
+    margin: 5%;
+    overflow: hidden;
+}
+
+.zoom :hover {
+    transform: scale(1.1);
+}
+
+
+/* input[type=text] {
     width: 100%;
     padding: 12px 20px;
     margin: 2px 0;
@@ -485,6 +521,13 @@ input[type=reset]:hover {
 
 #contact-us p {
     color: #ff0404;
+} */
+
+.footer {
+    height: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin: 0;
 }
 
 #down-footer {
@@ -555,4 +598,45 @@ input[type=reset]:hover {
 #footer3 a:hover {
     color: #FFFFFF;
     text-decoration: underline;
+}
+
+#ginastic-assosiaction {
+    display: flex;
+    margin: 0;
+    background: rgb(195, 195, 195);
+    font-family: "Spline Sans", sans-serif;
+    color: #FFFFFF;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+@media (max-width: 940px) {
+    #advantages-image {
+        display: none;
+    }
+    #advantages {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    #advantages-text {
+        margin-left: 5%;
+    }
+}
+
+@media (max-width: 630px) {
+    #what-image {
+        display: none;
+    }
+    #what-text {
+        margin-left: 5%;
+    }
+    #what-we-provide {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
 }

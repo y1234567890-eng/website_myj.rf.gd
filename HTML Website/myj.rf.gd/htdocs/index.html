@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -9,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="J91IjLyufmgCuYE1h_ZmA-nwqf67FA8uZpKAeKpVVaQ" />
 
-    <script>
+    <!-- <script>
         function validate_form(event) {
             var name = document.forms["contact-form"]["name"].value
             var email = document.forms["contact-form"]["email"].value
@@ -30,12 +31,22 @@
                 event.preventDefault();
                 window.history.back();
             }
+            if (!name == "") {
+                if (!email == "") {
+                    if (!messege == "") {
+                        localStorage.setItem("Name", na)
+                        localStorage.setItem("Email", ema)
+                        localStorage.setItem("Message", messege)
+                    }
+                }
+            }
 
         }
-    </script>
+    </script> -->
 </head>
 
 <body>
+
 
     <nav>
         <div id="inner-nav">
@@ -64,7 +75,6 @@
             </div>
         </div>
     </nav>
-
     <div id="header">
         <div id="header-content">
             <h1 align="center">
@@ -180,6 +190,31 @@
         </div>
     </div>
 
+    <div id="contact-us">
+        <!-- <div id="inner-contact">
+            <table>
+                <tr>
+                    <td>
+                        <h2>Contact us</h2>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="zoom">
+                            <p>Email: contact.us.myj@gmail.com</p>
+                            <button onclick="">Email</button>
+                        </div>
+                        <div class="zoom">
+                            <p>Live Chat With Us</p>
+                            <button onclick="">Live Chat</button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div> -->
+        <p>Contact us is under development.</p>
+    </div>
+
     <!-- <p align="left"><a href="https://yousufjamil.wixsite.com/myj-apps"><button>Website for Play Store</button></a></p>
     <p align="left"><a href="https://yousufjamil.wixsite.com/naat" class="test"><button>Website for YouTube</button></a>
     </p>
@@ -205,7 +240,7 @@
     </ul>
     <br> -->
 
-    <div id="contact-us">
+    <!-- <div id="contact-us">
         <table width="30%">
             <tr height="40px"></tr>
             <tr>
@@ -217,18 +252,20 @@
             </tr>
             <tr>
                 <td>
-                    <form name="contact-form" onsubmit="validate_form(event)" action="mailto:contact.us.myj@gmail.com" method="post" enctype="text/plain">
-                        <br>
-                        <p>Email: *</p><input type="text" name="email" placeholder="Email">
-                        <br>
-                        <p>Name: *</p><input type="text" name="name" placeholder="Name">
-                        <br>
-                        <p>Message: *</p><textarea type="text" name="message" placeholder="Type your message here" rows="5" cols="65"></textarea>
-                        <br>
-                        <p>* Required</p>
-                        <br>
-                        <input type="submit" value="Submit" name="submit">
-                        <input type="reset" value="Reset">
+                    <div id="inner-contact">
+                        <form name="contact-form" onsubmit="validate_form(event)" method="post" enctype="text/plain">
+                            <br>
+                            <p>Email: *</p><input type="text" name="email" placeholder="Email">
+                            <br>
+                            <p>Name: *</p><input type="text" name="name" placeholder="Name">
+                            <br>
+                            <p>Message: *</p><textarea type="text" name="message" placeholder="Type your message here" rows="5" cols="65"></textarea>
+                            <br>
+                            <p>* Required</p>
+                            <br>
+                            <input type="submit" value="Submit" name="submit" id="myBtn">
+                            <input type="reset" value="Reset">
+                    </div>
                     </form>
                 </td>
             </tr>
@@ -237,28 +274,101 @@
 
     </div>
 
-    <div id="down-footer">
-        <div id="footer-left1">
-            <h1>MYJ World</h1>
-            <h2>Working for your betterment</h2>
+    Trigger/Open The Modal
+    <button id="myBtn">Open Modal</button>
+
+    The Modal
+    <div id="myModal" class="modal">
+
+        Modal content
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Type the following email:</p>
+            <div id="inner-modal">
+                <p>Email: contact.us.myj@gmail.com</p>
+                <p>Subject: Contact Us</p>
+                <p>Name: &nbsp;</p>
+                <p id="nam"></p>
+                <p>Email:: &nbsp;</p>
+                <p id="emai"></p>
+                <p>Messege: &nbsp;</p>
+                <p id="messeg"></p>
+
+            </div>
         </div>
-        <div id="footer-right1">
-            <p>What started off as an idea to tackle one specific industry has grown into an automated and intricate technology managing to make a breakthrough in the world of Online Services. Since 2020 MYJ Apps has been making users’ lives easier by offering
-                a wide range of products and services through its extensive platform.
+
+    </div>
+    <script>
+        function setDataName() {
+            document.getElementById("nam").innerHTML += localStorage.getItem(Name)
+        }
+
+        function setDataEmail() {
+            document.getElementById("emai").innerHTML += localStorage.getItem(Email)
+        }
+
+        function setDataMessege() {
+            document.getElementById("messeg").innerHTML += localStorage.getItem(Messege)
+        }
+    </script> -->
+    <div class=".footer">
+        <div id="down-footer">
+            <div id="footer-left1">
+                <h1>MYJ World</h1>
+                <h2>Working for your betterment</h2>
+            </div>
+            <div id="footer-right1">
+                <p>What started off as an idea to tackle one specific industry has grown into an automated and intricate technology managing to make a breakthrough in the world of Online Services. Since 2020 MYJ Apps has been making users’ lives easier by
+                    offering a wide range of products and services through its extensive platform.
+                </p>
+            </div>
+        </div>
+
+        <div id="footer2">
+            <p align="center">© 2022, MYJ
+                <image src="dot.png" height="10px" width="10px" alt="dot"><a href="https://privacy.myj.rf.gd"><i>Privacy Policy</i> </a>
+                    <image src="dot.png" height="10px" width="10px" alt="dot"><a href="https://termsofuse.myj.rf.gd"><i>Terms of Use</i> </a>
             </p>
+        </div>
+        <div id="footer3">
+            <p>This part is for authorised users only: <a href="https://myj.rf.gd/Assets/login_warning.html">&nbsp;<i>Click
+                    here</i>&nbsp;</a> to access the private page.</p>
+        </div>
+        <div id="ginastic-assosiaction">
+            <div id="inner-ginastic">
+                <!-- <p>We're currently:</p> -->
+                <img src="association.png" alt="Association of Ginastic">
+            </div>
         </div>
     </div>
 
-    <div id="footer2">
-        <p align="center">© 2022, MYJ
-            <image src="dot.png" height="10px" width="10px" alt="dot"><a href="https://privacy.myj.rf.gd"><i>Privacy
-                        Policy</i> </a>
-        </p>
-    </div>
-    <div id="footer3">
-        <p>This part is for authorised users only: <a href="https://training.myj.rf.gd">&nbsp;<i>Click
-                    here</i>&nbsp;</a> to access the private page.</p>
-    </div>
+    <!-- <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script> -->
 
 </body>
 
