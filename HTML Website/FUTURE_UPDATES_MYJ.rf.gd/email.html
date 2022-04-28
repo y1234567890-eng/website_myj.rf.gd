@@ -1,0 +1,226 @@
+<html lang="en">
+
+<head>
+    <title>Email us</title>
+    <link rel="icon" href="MYJ_icon_updated.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap');
+        body {
+            font-family: "Lato", sans-serif;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            background-color: rgb(233, 233, 233);
+        }
+        /* #contact-us {
+            margin: 50dp;
+        }
+        
+        input[type=text] {
+            width: 500px;
+            padding: 12px 20px;
+            margin: 2px 0;
+            box-sizing: border-box;
+            border: 3px solid #ccc;
+            -webkit-transition: 0.5s;
+            transition: 0.5s;
+            outline: none;
+        }
+        
+        input[type=text]:focus {
+            border: 3px solid #555;
+        }
+        
+        input[type=submit] {
+            background-color: #04AA6D;
+            border: none;
+            color: #FFFFFF;
+            padding: 16px 32px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition-duration: 0.4s;
+            border: 2px solid #4CAF50;
+        }
+        
+        input[type=reset] {
+            background-color: #d4d4d4;
+            color: #000000;
+            border: 2px solid #4CAF50;
+            padding: 16px 32px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition-duration: 0.4s;
+        }
+        
+        input[type=submit]:hover {
+            background-color: #ffffff;
+            color: #000000;
+            border: 2px solid #4CAF50;
+        }
+        
+        input[type=reset]:hover {
+            background-color: #FFFFFF;
+            color: #000000;
+            border: 2px solid #4CAF50;
+        }
+        
+        #contact-us textarea {
+            width: 500px;
+            padding: 12px 20px;
+            margin: 2px 0;
+            box-sizing: border-box;
+            border: 3px solid #ccc;
+            -webkit-transition: 0.5s;
+            transition: 0.5s;
+            outline: none;
+            font-family: "Spline Sans", sans-serif;
+        }
+        
+        #contact-us textarea:focus {
+            border: 3px solid #555;
+        } */
+        
+        #result {
+            /* display: none; */
+            background-color: #d0dcf4;
+            padding: 50px;
+            margin: 30%;
+            margin-top: 10%;
+            margin-bottom: 0%;
+        }
+        
+        table {
+            border-style: dashed;
+            width: 100%;
+        }
+        
+        button {
+            background-color: #04AA6D;
+            border: none;
+            color: #FFFFFF;
+            padding: 16px 32px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition-duration: 0.4s;
+            border: 2px solid #4CAF50;
+        }
+        
+        button:hover {
+            background-color: #ffffff;
+            color: #000000;
+            border: 2px solid #4CAF50;
+        }
+        
+        button:focus {
+            background-color: #ffffff;
+            color: #000000;
+            border: 2px dashed #4CAF50;
+        }
+    </style>
+    <!-- <script>
+        function validate_form(event) {
+            const name = document.forms["contact-form"]["name"].value
+            const email = document.forms["contact-form"]["email"].value
+            const messege = document.forms["contact-form"]["message"].value
+
+            if (name == "") {
+                alert("Name field is blank. Required to fill")
+                event.preventDefault();
+                window.history.back();
+            }
+            if (email == "") {
+                alert("Email field is blank. Required to fill")
+                event.preventDefault();
+                window.history.back();
+            }
+            if (messege == "") {
+                alert("Messege field is blank. Required to fill")
+                event.preventDefault();
+                window.history.back();
+            }
+            if (!name == "") {
+                if (!email == "") {
+                    if (!messege == "") {
+                        localStorage.setItem("Name", stringify(name))
+                        localStorage.setItem("Email", stringify(email))
+                        localStorage.setItem("Message", stringify(messege))
+                    }
+                }
+            }
+
+        }
+    </script> -->
+</head>
+
+<body>
+    <!-- <div id="contact-us">
+        <div id="inner-contact">
+            <h1>Contact us</h1>
+            <form name="contact-form" onsubmit="validate_form(event)">
+                <input type="text" name="email" placeholder="Email">
+                <br>
+                <input type="text" name="name" placeholder="Name">
+                <br>
+                <textarea type="text" name="message" placeholder="Type your message here" rows="5" cols="65"></textarea>
+                <br>
+                <input type="submit" value="Submit" name="submit" id="submitBtn">
+                <input type="reset" value="Reset">
+            </form>
+        </div>
+    </div> -->
+    <div id="result">
+        <div id="inner-result">
+            <p>Type the following email:</p>
+            <div id="inner-result-message">
+                <table border="1">
+                    <tr>
+                        <td>
+                            <p>Email: contact.us.myj@gmail.com</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Subject: Contact Us</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Name: Your name</p>
+                            <p>Email: Your email</p>
+                            <p>Message: Your messege </p>
+                        </td>
+                    </tr>
+                </table>
+                <p><i>Privacy: We collect this data only to contact you. None of this data will be used in any other way.</i></p>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div id="back">
+        <a href="index.html#contact-us"><button>Back to Home</button></a>
+    </div>
+    <!-- <script>
+        function setDataName() {
+            document.getElementById("nam").innerHTML += JSON.parse(localStorage.getItem(Name))
+        }
+
+        function setDataEmail() {
+            document.getElementById("emai").innerHTML += JSON.parse(localStorage.getItem(Email))
+        }
+
+        function setDataMessege() {
+            document.getElementById("messeg").innerHTML += JSON.parse(localStorage.getItem(Messege))
+        }
+    </script> -->
+</body>
+
+</html>

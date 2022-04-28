@@ -6,6 +6,7 @@
     <link rel="icon" href="MYJ_icon_updated.png">
 
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="J91IjLyufmgCuYE1h_ZmA-nwqf67FA8uZpKAeKpVVaQ" />
@@ -73,31 +74,43 @@
                             onmouseover="this.src='new_tab_hover.png'" onmouseout="this.src='new_tab.png'"
                             title="Open in new tab"></button></a>
             </div>
+            <i class='fa fa-bars' style='color: white' onclick="document.getElementById('sidebar').style.display='flex';"></i>
         </div>
     </nav>
+    <div id="sidebar" onclick="document.getElementById('sidebar').style.display='none';">
+        <span><i class="fa fa-times"></i></span>
+        <div>
+            <a href="#" title="Home"><button>Home</button></a>
+            <a href="play.html" title="Play Store Details"> <button>Play Store Details</button></a>
+            <a href="yt.html" title="Youtube Details"> <button>YouTube Details</button></a>
+            <a href="scratch.html" title="Scratch Details"> <button>Scratch Details</button></a>
+            <a href="https://scratch.mit.edu/studios/27396731" target="_blank" rel="noopener noreferrer" title="Scratch"><button>Scratch</button></a>
+            <a href="https://play.google.com/store/apps/developer?id=Muhammad+Yousuf+Jamil" target="_blank" rel="noopener noreferrer"><button>Play Store</button></a>
+            <a href="https://www.youtube.com/channel/UC91NABKCGSLKzfcqiipr3rg" target="_blank" rel="noopener noreferrer" title="Youtube"> <button>YouTube</button></a>
+            <a href="https://chatting.page/foit4pdnzzdkvjyx7qdrmlqzq9js3pir" target="_blank" rel="noopener noreferrer" title="Chatting Page"> <button>Chat with us</button></a>
+        </div>
+    </div>
     <div id="header">
         <div id="header-content">
-            <h1 align="center">
-                MYJ World - All The Work By Muhammad Yousuf Jamil</h1>
-
-            <h2>Working for your betterment</h2>
+            <h1 align="center" title="MYJ World - All The Work By Muhammad Yousuf Jamil">MYJ World - All The Work By Muhammad Yousuf Jamil</h1>
+            <h2 title="Working for your betterment">Working for your betterment</h2>
         </div>
     </div>
 
     <div id="intro">
         <div id="inner-intro">
-            <h1> Introduction </h1>
-            <p align="left">Want to have latest technology? Want to get latest updates? No issue. MYJ is the solution for you.</p>
+            <h1 title="Introduction"> Introduction </h1>
+            <p align="left" title="Want to have latest technology? Want to get latest updates? No issue. MYJ is the solution for you.">Want to have latest technology? Want to get latest updates? No issue. MYJ is the solution for you.</p>
         </div>
     </div>
 
     <div id="what-we-provide">
         <div id="what-image">
-            <img src="MYJ_icon_updated.png">
+            <img src="MYJ_icon_updated.png" alt="MYJ Icon" title="MYJ Icon">
         </div>
         <div id="what-text">
-            <h1>Our Services</h1>
-            <p>MYJ provides multiple services for users. They include:
+            <h1 title="Our services">Our Services</h1>
+            <p title="MYJ provides multiple services for users. They include: 1. Scratch, 2. Play store, 3. YouTube">MYJ provides multiple services for users. They include:
                 <ul>
                     <li><a href="https://scratch.mit.edu/studios/27396731">Scratch</a></li>
                     <li><a href="https://play.google.com/store/apps/developer?id=Muhammad+Yousuf+Jamil">Play Store</a></li>
@@ -113,12 +126,12 @@
         <table>
             <tr>
                 <td>
-                    <h1>Why choose MYJ?</h1>
+                    <h1 title="Why choose MYJ?">Why choose MYJ?</h1>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <p>There are multiple reasons why you should choose MYJ. They include:
+                    <p title="There are multiple reasons why you should choose MYJ. They include: 1. Technology at your fingertips, 2. Providing Number One Service, 3. Multi-featured apps with extremely well developed services">There are multiple reasons why you should choose MYJ. They include:
                         <ol>
                             <li><a href="#technology-at-your-fingertips">Technology at your fingertips</a></li>
                             <li><a href="#no-1-service">Providing Number 1 Service</a></li>
@@ -133,8 +146,8 @@
 
     <div id="technology-at-your-fingertips">
         <div id="inner-technology-at-your-fingertips">
-            <h1 id="technology-at-your-fingertips-heading">Technology At Your Fingertips</h1>
-            <p>With technology paving the way towards new developments, accessing, finding, and sharing information is easier than ever before. With a simple click we can make your daily tasks simpler and more efficient. Our sophisticated technology here
+            <h1 id="technology-at-your-fingertips-heading" title="Technology at your fingertips">Technology At Your Fingertips</h1>
+            <p title="With technology paving the way towards new developments, accessing, finding, and sharing information is easier than ever before. With a simple click we can make your daily tasks simpler and more efficient. Our sophisticated technology here at MYJ is ready for you to use at your own convenience. Start using our services today and see how it can change your life!">With technology paving the way towards new developments, accessing, finding, and sharing information is easier than ever before. With a simple click we can make your daily tasks simpler and more efficient. Our sophisticated technology here
                 at MYJ is ready for you to use at your own convenience. Start using our services today and see how it can change your life!</p>
         </div>
     </div>
@@ -191,7 +204,7 @@
     </div>
 
     <div id="contact-us">
-        <!-- <div id="inner-contact">
+        <div id="inner-contact">
             <table>
                 <tr>
                     <td>
@@ -200,19 +213,19 @@
                 </tr>
                 <tr>
                     <td>
-                        <div class="zoom">
+                        <div id="contact-detail-one" class="zoom">
                             <p>Email: contact.us.myj@gmail.com</p>
-                            <button onclick="">Email</button>
+                            <a href="email.html"><button>Email</button></div></a>
                         </div>
-                        <div class="zoom">
+                        <div id="contact-detail-two" class="zoom">
                             <p>Live Chat With Us</p>
-                            <button onclick="">Live Chat</button>
+                            <a href="https://chatting.page/foit4pdnzzdkvjyx7qdrmlqzq9js3pir"><button>Live Chat</button></a>
                         </div>
                     </td>
                 </tr>
             </table>
-        </div> -->
-        <p>Contact us is under development.</p>
+        </div>
+        <!-- <p>Contact us is under development.</p> -->
     </div>
 
     <!-- <p align="left"><a href="https://yousufjamil.wixsite.com/myj-apps"><button>Website for Play Store</button></a></p>
@@ -270,11 +283,11 @@
                 </td>
             </tr>
             <tr height="40px"></tr>
-        </table>
+        </table> -->
 
-    </div>
+    <!-- </div> -->
 
-    Trigger/Open The Modal
+    <!-- Trigger/Open The Modal
     <button id="myBtn">Open Modal</button>
 
     The Modal

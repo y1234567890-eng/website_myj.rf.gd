@@ -213,3 +213,133 @@ nav {
     height: 100%;
     font-family: "Outfit", sans-serif;
 }
+
+#heading {
+    display: flex;
+    width: 100%;
+    background: rgb(255, 255, 255);
+    /* height: 300px; */
+    height: auto;
+    padding-top: 100px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: "Spline Sans", sans-serif;
+}
+
+#cards {
+    width: 100%;
+    background: rgb(255, 255, 255);
+    /* height: 300px; */
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: "Spline Sans", sans-serif;
+    margin-top: 10px;
+}
+
+#card1 {
+    display: flex;
+    margin: 5px 20%;
+    border-style: solid;
+}
+
+#left-card1 {
+    background: rgb(233, 233, 233);
+    padding: 10px;
+    width: 500px;
+}
+
+#left-card1 img {
+    border-radius: 8px;
+}
+
+#right-card1 {
+    background: rgb(255, 255, 255);
+    padding: 10px;
+}
+
+#card2 {
+    display: flex;
+    margin: 5px 20%;
+    border-style: solid;
+}
+
+#left-card2 {
+    background: rgb(233, 233, 233);
+    padding: 10px;
+    width: 500px;
+}
+
+#left-card2 img {
+    border-radius: 8px;
+}
+
+#right-card2 {
+    background: rgb(255, 255, 255);
+    padding: 10px;
+}
+
+#card3 {
+    display: flex;
+    margin: 5px 20%;
+    border-style: solid;
+}
+
+#left-card3 {
+    background: rgb(233, 233, 233);
+    padding: 10px;
+    width: 500px;
+}
+
+#left-card3 img {
+    border-radius: 8px;
+}
+
+#right-card3 {
+    background: rgb(255, 255, 255);
+    padding: 10px;
+}
+
+#card4 {
+    display: flex;
+    margin: 5px 20%;
+    border-style: solid;
+}
+
+#left-card4 {
+    background: rgb(233, 233, 233);
+    padding: 10px;
+    width: 500px;
+}
+
+#left-card4 img {
+    border-radius: 8px;
+}
+
+#right-card4 {
+    background: rgb(255, 255, 255);
+    padding: 10px;
+}
+
+#card5 {
+    display: flex;
+    margin: 5px 20%;
+    border-style: solid;
+}
+
+#left-card5 {
+    background: rgb(233, 233, 233);
+    padding: 10px;
+    width: 500px;
+}
+
+#left-card5 img {
+    border-radius: 8px;
+}
+
+#right-card5 {
+    background: rgb(255, 255, 255);
+    padding: 10px;
+}
