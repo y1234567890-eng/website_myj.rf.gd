@@ -41,13 +41,10 @@ nav {
     font-size: 15px;
     text-decoration: none;
     transition: 0.5s;
+    margin-right: 10px;
 }
 
 #nav-btns a:hover {
-    color: #ff9900;
-}
-
-.selectedlink:hover {
     color: #ff9900;
 }
 
