@@ -13,6 +13,7 @@ nav {
     width: 100%;
     background: #800000;
     height: 75px;
+    z-index: 5;
 }
 
 #inner-nav {
@@ -113,6 +114,11 @@ nav {
     background: rgb(255, 255, 255);
 }
 
+.video-vid iframe {
+    width: 400px;
+    height: 225px;
+}
+
 .line {
     margin-bottom: 20px;
     margin-top: 5px;
@@ -124,6 +130,7 @@ nav {
     position: relative;
     left: 50%;
     transform: translate(-50%);
+    z-index: 1;
 }
 
 #back-mobile {
@@ -145,6 +152,20 @@ nav {
     border: 2px solid #4CAF50;
 }
 
+#bottom-style {
+    margin-bottom: 50px;
+    margin-top: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 50%;
+    height: 2px;
+    background: rgb(255, 255, 255);
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 1;
+}
+
 @media only screen and (max-width: 945px) {
     nav {
         display: none;
@@ -155,16 +176,22 @@ nav {
     #back-mobile {
         display: block;
     }
-}
-
-@media only screen and (max-width: 641px) {
-    .card1 {
-        margin: 20px 75px;
+    .video-vid iframe {
+        width: 400px;
+        height: 225px;
     }
 }
 
-@media only screen and (max-width: 495px) {
-    .card1 {
-        margin: 20px 20px;
+@media only screen and (max-width: 641px) {
+    .video-vid iframe {
+        width: 300px;
+        height: 169px;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .video-vid iframe {
+        width: 200px;
+        height: 113px;
     }
 }
