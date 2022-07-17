@@ -3,8 +3,9 @@
 <head>
     <title>Rafique Ahmed&#8217;s Website</title>
     <link rel="icon" href="Assets/RAFIQUEAPPS_logo.png" />
-    <link rel="stylesheet" href="style.css" type="text/css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link id="pagestyle" rel="stylesheet" href="style.css" type="text/css" />
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <meta name="viewport" content="width=device-width">
 </head>
 
 <body>
@@ -18,19 +19,83 @@
                 <a href="#" style="color: #a6f2ff;">Home</a>
                 <a href="#">Chemistry</a>
                 <a href="#">Islamic content</a>
+                <a onclick="optionrequest()">Options</a>
             </div>
         </div>
+        <i class='fa fa-bars' onclick="document.getElementById('sidebar').style.display='flex';"></i>
     </nav>
-    <div id="header">
-        <div id="inner-header">
-            <h1>Welcome To Rafique Ahmed&#8217;s Website</h1>
-            <!-- <h2>The Right Place To Learn Sciences & Islam</h2> -->
-            <h2>The Place To Learn Anything</h2>
+    <div id="sidebar" onclick="document.getElementById('sidebar').style.display='none';">
+        <span><i class="fa fa-times"></i></span>
+        <div>
+            <a id="home" href="#" style="color: #a6f2ff;">Home</a>
+            <a href="#">Chemistry</a>
+            <a href="#">Islamic content</a>
+            <a onclick="optionrequestmob()">Options</a>
         </div>
     </div>
-    <div id="content-coming-soon">
-        <p>Coming Soon</p>
+    <div id="option">
+        <p style=" font-size: 18px; padding-bottom: 5px; "><b>Options</b></p>
+        <p id="dark2" onclick="dark() ">Light Mode</p>
     </div>
+    <div id="mob-option" onclick="document.getElementById('mob-option').style.display='none';">
+        <span><i class="fa fa-times "></i></span>
+        <p style="font-size: 18px; padding-bottom: 5px; "><b>Options</b></p>
+        <p id="dark" onclick="dark() ">Light Mode</p>
+    </div>
+    <div id="body-below-nav " onclick="hideoption() ">
+        <div id="header">
+            <div id="inner-header">
+                <h1>Welcome To Rafique Ahmed&#8217;s Website</h1>
+                <!-- <h2>The Right Place To Learn Sciences & Islam</h2> -->
+                <h2>The Place To Learn Anything</h2>
+            </div>
+        </div>
+        <div id="content-coming-soon">
+            <p>Coming Soon</p>
+        </div>
+    </div>
+    <script type="text/javascript ">
+        var option = document.getElementById("option")
+        var moboption = document.getElementById("mob-option")
+        var stylepage = document.getElementById("pagestyle")
+        const buttondark = document.getElementById("dark")
+        const buttondark2 = document.getElementById("dark2")
+        var homelink = document.getElementById("home")
+
+        function optionrequest() {
+            if (option.style.display == 'none') {
+                option.style.display = 'block';
+            } else {
+                option.style.display = 'none';
+            }
+        }
+
+        function optionrequestmob() {
+            if (moboption.style.display == 'none') {
+                moboption.style.display = 'block';
+            } else {
+                moboption.style.display = 'none';
+            }
+        }
+
+        function hideoption() {
+            option.style.display = 'none';
+        }
+
+        function dark() {
+            if (stylepage.getAttribute("href") == "style.css ") {
+                stylepage.setAttribute("href", "style-light.css ")
+                buttondark.textContent = "Dark Mode"
+                buttondark2.textContent = "Dark Mode"
+                homelink.style.color = "#00788d";
+            } else {
+                stylepage.setAttribute("href", "style.css ")
+                buttondark.textContent = "Light Mode"
+                buttondark2.textContent = "Light Mode"
+                homelink.style.color = "#a6f2ff";
+            }
+        }
+    </script>
 
 </body>
 

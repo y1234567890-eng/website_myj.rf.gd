@@ -6,12 +6,14 @@
 body {
     margin: 0;
     background: #ffffff;
+    color: #000000;
+    transition: 0.5s;
 }
 
 nav {
     position: fixed;
     width: 100%;
-    background: #272727a1;
+    background: rgba(255, 255, 255, 0.507);
     height: 60px;
 }
 
@@ -35,46 +37,19 @@ nav {
 }
 
 #nav-btns a {
-    /* Added cursor code */
-    cursor: pointer;
-    color: #ffffff;
+    color: #000000;
     font-family: "Fredoka", sans-serif;
     font-weight: 300;
     font-size: 15px;
     text-decoration: none;
     transition: 0.5s;
     margin-right: 10px;
+    cursor: pointer;
 }
 
 #nav-btns a:hover {
     color: #ff9900;
 }
-
-#header {
-    font-size: 20px;
-    text-align: center;
-    height: 90vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Assets/Background.gif);
-    background-size: cover;
-    padding-top: 60px;
-}
-
-#inner-header h1 {
-    color: #FFFFFF;
-    font-family: "Outfit", sans-serif;
-    font-size: 55px;
-}
-
-#inner-header h2 {
-    color: #FFFFFF;
-    font-family: "Lato", sans-serif;
-}
-
-
-/* Below Lost */
 
 nav .fa-bars {
     display: none;
@@ -121,21 +96,41 @@ nav .fa-bars {
     text-decoration: none;
 }
 
+#header {
+    font-size: 20px;
+    text-align: center;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.5)), url(Assets/Background.gif);
+    background-size: cover;
+    padding-top: 60px;
+}
+
+#inner-header h1 {
+    color: #FFFFFF;
+    font-family: "Outfit", sans-serif;
+    font-size: 55px;
+}
+
+#inner-header h2 {
+    color: #FFFFFF;
+    font-family: "Lato", sans-serif;
+}
+
 #option {
     cursor: pointer;
     display: none;
     position: fixed;
     top: 65;
     right: 23;
-    background: rgba(0, 0, 0, 0.7);
-    color: rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 0.7);
+    color: rgb(0, 0, 0);
     border-radius: 8px;
     padding: 5px 10px;
     font-family: "Spline Sans", sans-serif;
     transition: 0.5s;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
 }
 
 #option p:hover {
@@ -180,17 +175,17 @@ nav .fa-bars {
     width: 12px;
 }
 
-::-webkit-scrollbar-track {
-    background: rgba(100, 100, 100, 0.1);
+ ::-webkit-scrollbar-track {
+    background: rgba(165, 165, 165, 0.1);
 }
 
  ::-webkit-scrollbar-thumb {
-    background: rgb(100, 100, 100);
+    background: rgb(165, 165, 165);
     border-radius: 12px;
 }
 
  ::-webkit-scrollbar-thumb:hover {
-    background: rgba(100, 100, 100, 0.7);
+    background: rgba(165, 165, 165, 0.7);
 }
 
 @media only screen and (max-width: 479px) {
@@ -203,7 +198,7 @@ nav .fa-bars {
         padding-bottom: 20px;
         font-size: 15px;
         margin-right: 20px;
-        color: #ffffff;
+        color: #000000;
     }
     #option {
         display: none;
