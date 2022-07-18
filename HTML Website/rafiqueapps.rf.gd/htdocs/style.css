@@ -5,7 +5,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400&display=swap');
 body {
     margin: 0;
-    background: #ffffff;
+    background: #1e1e1e;
+    color: #FFFFFF;
+    transition: 0.5s;
 }
 
 h1 {
@@ -63,7 +65,6 @@ nav {
 }
 
 #nav-btns a {
-    /* Added cursor code */
     cursor: pointer;
     color: #ffffff;
     font-family: "Fredoka", sans-serif;
@@ -100,9 +101,6 @@ nav {
     color: #FFFFFF;
     font-family: "Lato", sans-serif;
 }
-
-
-/* Below Lost */
 
 nav .fa-bars {
     display: none;
@@ -149,7 +147,7 @@ nav .fa-bars {
     text-decoration: none;
 }
 
-#option {
+.option {
     cursor: default;
     display: none;
     position: fixed;
@@ -166,18 +164,18 @@ nav .fa-bars {
     justify-content: center;
 }
 
-#option a {
+.option a {
     cursor: pointer;
     margin: 10px 5px;
     text-decoration: none;
     transition: 0.5s;
 }
 
-#option a:hover {
+.option a:hover {
     color: #ff9900;
 }
 
-#mob-option {
+.mob-option {
     z-index: 3;
     position: fixed;
     top: 0;
@@ -191,7 +189,7 @@ nav .fa-bars {
     text-align: center;
 }
 
-#mob-option .fa-times {
+.mob-option .fa-times {
     position: absolute;
     top: 20px;
     right: 20px;
@@ -201,7 +199,7 @@ nav .fa-bars {
     height: 10px;
 }
 
-#mob-option p {
+.mob-option p {
     display: block;
     margin: 30px 20px;
     color: rgb(255, 255, 255);
@@ -215,7 +213,7 @@ nav .fa-bars {
 }
 
 ::-webkit-scrollbar-track {
-    background: rgba(100, 100, 100, 0.1);
+    background: rgba(100, 100, 100, 0.5);
 }
 
  ::-webkit-scrollbar-thumb {
@@ -239,7 +237,7 @@ nav .fa-bars {
         margin-right: 20px;
         color: #ffffff;
     }
-    #option {
+    .option {
         display: none;
     }
 }

@@ -16,7 +16,7 @@
                 <img src="Assets/RAFIQUEAPPS_logo.png" width="90px" alt="logo">
             </div>
             <div id="nav-btns">
-                <a href="#" style="color: #a6f2ff;">Home</a>
+                <a id="home2" href="#" style="color: #a6f2ff;">Home</a>
                 <a href="#">Chemistry</a>
                 <a href="#">Islamic content</a>
                 <a onclick="optionrequest()">Options</a>
@@ -33,11 +33,11 @@
             <a onclick="optionrequestmob()">Options</a>
         </div>
     </div>
-    <div id="option">
+    <div id="options" class="option">
         <p style=" font-size: 18px; padding-bottom: 5px; "><b>Options</b></p>
         <a id="dark" onclick="dark() ">Light Mode</a>
     </div>
-    <div id="mob-option" onclick="document.getElementById('mob-option').style.display='none';">
+    <div id="options-mob" class="mob-option" onclick="document.getElementById('options-mob').style.display='none';">
         <span><i class="fa fa-times "></i></span>
         <p style="font-size: 18px; padding-bottom: 5px; "><b>Options</b></p>
         <p id="dark2" onclick="dark() ">Light Mode</p>
@@ -55,12 +55,13 @@
         </div>
     </div>
     <script type="text/javascript ">
-        var option = document.getElementById("option")
-        var moboption = document.getElementById("mob-option")
+        var option = document.getElementById("options")
+        var moboption = document.getElementById("options-mob")
         var stylepage = document.getElementById("pagestyle")
         const buttondark = document.getElementById("dark")
         const buttondark2 = document.getElementById("dark2")
         var homelink = document.getElementById("home")
+        var homelink2 = document.getElementById("home2")
 
         option.style.display = 'none';
         moboption.style.display = 'none';
@@ -84,6 +85,7 @@
 
         function hideoption() {
             option.style.display = 'none';
+            moboption.style.display = 'none';
         }
 
         function dark() {
@@ -92,11 +94,13 @@
                 buttondark.textContent = "Dark Mode"
                 buttondark2.textContent = "Dark Mode"
                 homelink.style.color = "#00008B";
+                homelink2.style.color = "#00008B";
             } else {
                 stylepage.setAttribute("href", "style.css ")
                 buttondark.textContent = "Light Mode"
                 buttondark2.textContent = "Light Mode"
                 homelink.style.color = "#a6f2ff";
+                homelink2.style.color = "#a6f2ff";
             }
         }
     </script>

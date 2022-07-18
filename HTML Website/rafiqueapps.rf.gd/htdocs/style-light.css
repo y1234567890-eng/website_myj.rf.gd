@@ -147,7 +147,8 @@ nav .fa-bars {
     font-family: "Lato", sans-serif;
 }
 
-#option {
+.option {
+    cursor: default;
     display: none;
     position: fixed;
     top: 65;
@@ -158,20 +159,23 @@ nav .fa-bars {
     padding: 5px 10px;
     font-family: "Spline Sans", sans-serif;
     transition: 0.5s;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
 }
 
-#option a {
+.option a {
     cursor: pointer;
     margin: 10px 5px;
     text-decoration: none;
     transition: 0.5s;
 }
 
-#option a:hover {
+.option a:hover {
     color: #ff9900;
 }
 
-#mob-option {
+.mob-option {
     z-index: 3;
     position: fixed;
     top: 0;
@@ -185,7 +189,7 @@ nav .fa-bars {
     text-align: center;
 }
 
-#mob-option .fa-times {
+.mob-option .fa-times {
     position: absolute;
     top: 20px;
     right: 20px;
@@ -195,7 +199,7 @@ nav .fa-bars {
     height: 10px;
 }
 
-#mob-option p {
+.mob-option p {
     display: block;
     margin: 30px 20px;
     color: rgb(255, 255, 255);
