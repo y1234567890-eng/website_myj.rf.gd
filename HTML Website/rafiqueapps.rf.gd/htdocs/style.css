@@ -8,6 +8,34 @@ body {
     background: #ffffff;
 }
 
+h1 {
+    cursor: default;
+}
+
+h2 {
+    cursor: default;
+}
+
+h3 {
+    cursor: default;
+}
+
+h4 {
+    cursor: default;
+}
+
+h5 {
+    cursor: default;
+}
+
+h6 {
+    cursor: default;
+}
+
+p {
+    cursor: default;
+}
+
 nav {
     position: fixed;
     width: 100%;
@@ -122,7 +150,7 @@ nav .fa-bars {
 }
 
 #option {
-    cursor: pointer;
+    cursor: default;
     display: none;
     position: fixed;
     top: 65;
@@ -138,9 +166,15 @@ nav .fa-bars {
     justify-content: center;
 }
 
-#option p:hover {
-    color: #ff9900;
+#option a {
+    cursor: pointer;
+    margin: 10px 5px;
+    text-decoration: none;
     transition: 0.5s;
+}
+
+#option a:hover {
+    color: #ff9900;
 }
 
 #mob-option {
