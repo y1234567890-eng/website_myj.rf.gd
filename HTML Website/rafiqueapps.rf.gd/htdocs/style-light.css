@@ -8,6 +8,7 @@ body {
     background: #ffffff;
     color: #000000;
     transition: 0.5s;
+    user-select: none;
 }
 
 h1 {
@@ -225,7 +226,7 @@ nav .fa-bars {
     background: rgba(165, 165, 165, 0.7);
 }
 
-#description {
+.description {
     align-items: center;
     text-align: center;
     justify-content: center;
@@ -234,16 +235,16 @@ nav .fa-bars {
     background: #ebebeb;
 }
 
-#description img {
+.description img {
     margin: 10px;
 }
 
-#description h3 {
+.description h3 {
     font-weight: 400;
     font-size: 30px;
 }
 
-#description p {
+.description p {
     font-size: 14px;
 }
 
