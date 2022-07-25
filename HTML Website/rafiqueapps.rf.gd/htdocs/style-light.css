@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap');
 body {
     margin: 0;
     background: #ffffff;
@@ -289,6 +290,29 @@ nav .fa-bars {
 .yt-channel img {
     border-radius: 50px;
     padding: 5px;
+}
+
+.yt-channel button {
+    cursor: pointer;
+    background: rgb(203, 211, 255);
+    padding: 10px;
+    border: solid #FFFFFF;
+    border-radius: 30px;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.view-more {
+    text-decoration: none;
+    color: #000000;
+    font-family: "Lato", sans-serif;
+}
+
+.view-more:hover {
+    text-decoration: underline;
+}
+
+.view-more:focus {
+    color: #ff0000;
 }
 
 @media only screen and (max-width: 780px) {
