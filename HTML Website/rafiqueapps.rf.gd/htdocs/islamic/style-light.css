@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap');
+body {
+    margin: 0;
+    background: #ffffff;
+    color: #000000;
+    transition: 0.5s;
+    user-select: none;
+}
+
+h1 {
+    cursor: default;
+}
+
+h2 {
+    cursor: default;
+}
+
+h3 {
+    cursor: default;
+}
+
+h4 {
+    cursor: default;
+}
+
+h5 {
+    cursor: default;
+}
+
+h6 {
+    cursor: default;
+}
+
+p {
+    cursor: default;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.507);
+    height: 60px;
+}
+
+#inner-nav {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+#logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    height: 10px;
+    width: 10px;
+}
+
+#nav-btns {
+    margin-right: 15px;
+    margin-top: 20px;
+}
+
+#nav-btns a {
+    color: #000000;
+    font-family: "Fredoka", sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    text-decoration: none;
+    transition: 0.5s;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+#nav-btns a:hover {
+    color: #ff9900;
+}
+
+nav .fa-bars {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    height: 10px;
+    width: 10px;
+}
+
+#sidebar {
+    z-index: 3;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #4c4c4c;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#sidebar .fa-times {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 20px;
+    transition: 0.5s ease-out;
+    height: 10px;
+}
+
+#sidebar a {
+    display: block;
+    margin: 30px 20px;
+    color: rgb(255, 255, 255);
+    font-family: "Spline Sans", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.option {
+    cursor: default;
+    display: none;
+    position: fixed;
+    top: 65;
+    right: 23;
+    background: rgba(255, 255, 255, 0.7);
+    color: rgb(0, 0, 0);
+    border-radius: 8px;
+    padding: 5px 10px;
+    font-family: "Spline Sans", sans-serif;
+    transition: 0.5s;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.option a {
+    cursor: pointer;
+    margin: 10px 5px;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.option a:hover {
+    color: #ff9900;
+}
+
+.mob-option {
+    z-index: 3;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #4c4c4c;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.mob-option .fa-times {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 20px;
+    transition: 0.5s ease-out;
+    height: 10px;
+}
+
+.mob-option p {
+    display: block;
+    margin: 30px 20px;
+    color: rgb(255, 255, 255);
+    font-family: "Spline Sans", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+ ::-webkit-scrollbar-track {
+    background: rgba(165, 165, 165, 0.1);
+}
+
+ ::-webkit-scrollbar-thumb {
+    background: rgb(165, 165, 165);
+    border-radius: 12px;
+}
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: rgba(165, 165, 165, 0.7);
+}
+
+@media only screen and (max-width: 479px) {
+    #nav-btns {
+        display: none;
+    }
+    nav .fa-bars {
+        display: block;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        font-size: 15px;
+        margin-right: 20px;
+        color: #000000;
+    }
+    .option {
+        display: none;
+    }
+}

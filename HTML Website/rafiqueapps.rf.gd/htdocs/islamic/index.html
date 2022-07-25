@@ -1,0 +1,52 @@
+<html lang="en">
+
+<head>
+    <title>Rafique Ahmed&#8217;s Website</title>
+    <link rel="icon" href="Assets/RAFIQUE AHMED_logo.png" />
+    <link id="pagestyle" rel="stylesheet" href="style.css" type="text/css" />
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <meta name="viewport" content="width=device-width">
+</head>
+
+<body>
+
+    <nav>
+        <div id="inner-nav">
+            <div id="logo">
+                <img src="Assets/RAFIQUE AHMED_logo.png" width="90px" alt="logo">
+            </div>
+            <div id="nav-btns">
+                <a id="home2" href="#" style="color: #a6f2ff;">Home</a>
+                <a href="#">Chemistry</a>
+                <a href="#">Islamic content</a>
+                <a onclick="optionrequest()">Options</a>
+            </div>
+        </div>
+        <i class='fa fa-bars' onclick="document.getElementById('sidebar').style.display='flex';"></i>
+    </nav>
+    <div id="sidebar" onclick="document.getElementById('sidebar').style.display='none';">
+        <span><i class="fa fa-times"></i></span>
+        <div>
+            <a id="home" href="#" style="color: #a6f2ff;">Home</a>
+            <!-- <a href="#">Chemistry</a> -->
+            <a href="#">Islamic content</a>
+            <a onclick="optionrequestmob()">Options</a>
+        </div>
+    </div>
+    <div id="options" class="option">
+        <p style=" font-size: 18px; padding-bottom: 5px; "><b>Options</b></p>
+        <a id="dark" onclick="dark() ">Light Mode</a>
+    </div>
+    <div id="options-mob" class="mob-option" onclick="document.getElementById('options-mob').style.display='none';">
+        <span><i class="fa fa-times "></i></span>
+        <p style="font-size: 18px; padding-bottom: 5px; "><b>Options</b></p>
+        <p id="dark2" onclick="dark() ">Light Mode</p>
+    </div>
+    <div id="body-below-nav " onclick="hideoption() ">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga ut minima alias libero fugit est obcaecati placeat cupiditate cum asperiores molestiae praesentium dicta, ipsum et expedita autem, pariatur officiis dolor.</p>
+    </div>
+    <script src="main.js"></script>
+
+</body>
+
+</html>
