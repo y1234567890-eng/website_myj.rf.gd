@@ -204,6 +204,44 @@ nav .fa-bars {
     background: rgba(165, 165, 165, 0.7);
 }
 
+#body-below-nav {
+    font-family: "Spline Sans", sans-serif;
+}
+
+#title {
+    font-size: 20px;
+    text-align: center;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(../Assets/islambg.jpg);
+    background-size: cover;
+    padding-top: 60px;
+}
+
+#content {
+    padding: 20px 50px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#content button {
+    cursor: pointer;
+    background: rgb(203, 211, 255);
+    padding: 10px;
+    border: solid rgb(203, 211, 255);
+    border-radius: 8px;
+    font-family: 'Space Grotesk', sans-serif;
+    transition: 0.5s;
+}
+
+#content button:hover {
+    background: #FFFFFF;
+    transform: scale(1.1);
+}
+
 @media only screen and (max-width: 479px) {
     #nav-btns {
         display: none;
