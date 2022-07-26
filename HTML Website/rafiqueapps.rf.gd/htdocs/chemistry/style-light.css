@@ -6,8 +6,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap');
 body {
     margin: 0;
-    background: #1e1e1e;
-    color: #FFFFFF;
+    background: #ffffff;
+    color: #000000;
     transition: 0.5s;
     user-select: none;
 }
@@ -43,7 +43,7 @@ p {
 nav {
     position: fixed;
     width: 100%;
-    background: #272727a1;
+    background: rgba(255, 255, 255, 0.507);
     height: 60px;
 }
 
@@ -67,14 +67,14 @@ nav {
 }
 
 #nav-btns a {
-    cursor: pointer;
-    color: #ffffff;
+    color: #000000;
     font-family: "Fredoka", sans-serif;
     font-weight: 300;
     font-size: 15px;
     text-decoration: none;
     transition: 0.5s;
     margin-right: 10px;
+    cursor: pointer;
 }
 
 #nav-btns a:hover {
@@ -132,8 +132,8 @@ nav .fa-bars {
     position: fixed;
     top: 65;
     right: 23;
-    background: rgba(0, 0, 0, 0.7);
-    color: rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 0.7);
+    color: rgb(0, 0, 0);
     border-radius: 8px;
     padding: 5px 10px;
     font-family: "Spline Sans", sans-serif;
@@ -191,17 +191,17 @@ nav .fa-bars {
     width: 12px;
 }
 
-::-webkit-scrollbar-track {
-    background: rgba(100, 100, 100, 0.5);
+ ::-webkit-scrollbar-track {
+    background: rgba(165, 165, 165, 0.1);
 }
 
  ::-webkit-scrollbar-thumb {
-    background: rgb(100, 100, 100);
+    background: rgb(165, 165, 165);
     border-radius: 12px;
 }
 
  ::-webkit-scrollbar-thumb:hover {
-    background: rgba(100, 100, 100, 0.7);
+    background: rgba(165, 165, 165, 0.7);
 }
 
 #body-below-nav {
@@ -215,7 +215,7 @@ nav .fa-bars {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../Assets/islambg.jpg);
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(../Assets/chembg.jpg);
     background-size: cover;
     padding-top: 60px;
 }
@@ -229,22 +229,21 @@ nav .fa-bars {
 
 #content button {
     cursor: pointer;
-    background: rgb(123, 135, 199);
+    background: rgb(203, 211, 255);
     padding: 10px;
-    border: solid rgb(123, 135, 199);
+    border: solid rgb(203, 211, 255);
     border-radius: 8px;
     font-family: 'Space Grotesk', sans-serif;
     transition: 0.5s;
 }
 
 #content button:hover {
-    background: #1e1e1e;
+    background: #FFFFFF;
     transform: scale(1.1);
-    color: #FFFFFF;
 }
 
 #filler {
-    height: 25%;
+    height: 100%;
     width: 100%;
     z-index: -1;
 }
@@ -257,7 +256,7 @@ nav .fa-bars {
     bottom: 0;
     width: 100%;
     height: 60px;
-    background: #272727;
+    background: #f0f0f0;
 }
 
 @media only screen and (max-width: 479px) {
@@ -270,12 +269,9 @@ nav .fa-bars {
         padding-bottom: 20px;
         font-size: 15px;
         margin-right: 20px;
-        color: #ffffff;
+        color: #000000;
     }
     .option {
-        display: none;
-    }
-    #filler {
         display: none;
     }
 }
