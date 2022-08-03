@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+}
+
+.page-1 {
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: blue;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.page-2 {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: green;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.page-3 {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: black;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}

@@ -242,6 +242,20 @@ nav .fa-bars {
     transform: scale(1.1);
 }
 
+.view-more {
+    text-decoration: none;
+    color: #000000;
+    font-family: "Lato", sans-serif;
+}
+
+.view-more:hover {
+    text-decoration: underline;
+}
+
+.view-more:focus {
+    color: #ff0000;
+}
+
 #filler {
     height: 100%;
     width: 100%;
