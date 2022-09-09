@@ -1,0 +1,23 @@
+{
+  "short_name": "MYJ World",
+  "name": "MYJ World",
+  "description": "Working for your betterment",
+  "start_url": "/",
+  "scope": "/",
+  "id": "/",
+  "icons": [
+    {
+      "src": "192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "theme_color": "#f47400"
+}

@@ -293,45 +293,10 @@ nav {
     width: 500px;
 }
 
-#back-mobile {
-    display: none;
-    margin: 10px;
+#messege {
+    background: #ffffe0;
     position: fixed;
-}
-
-#back-mobile button {
-    background-color: #04AA6D;
-    border: none;
-    color: #FFFFFF;
-    padding: 10px 10px;
-    text-decoration: none;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 8px;
-    transition-duration: 0.4s;
-    border: 2px solid #4CAF50;
-}
-
-@media only screen and (max-width: 945px) {
-    nav {
-        display: none;
-    }
-    .card1 {
-        margin: 20px 150px;
-    }
-    #back-mobile {
-        display: block;
-    }
-}
-
-@media only screen and (max-width: 641px) {
-    .card1 {
-        margin: 20px 75px;
-    }
-}
-
-@media only screen and (max-width: 495px) {
-    .card1 {
-        margin: 20px 20px;
-    }
+    width: 100%;
+    font-family: "Spline Sans", sans-serif;
+    top: 75px;
 }
