@@ -611,6 +611,31 @@ nav .fa-bars {
     border: 2px dashed #4CAF50;
 }
 
+#contact-detail-three button {
+    background-color: #04AA6D;
+    border: none;
+    color: #FFFFFF;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition-duration: 0.4s;
+    border: 2px solid #4CAF50;
+}
+
+#contact-detail-three button:hover {
+    background-color: #ffffff;
+    color: #000000;
+    border: 2px solid #4CAF50;
+}
+
+#contact-detail-three button:focus {
+    background-color: #ffffff;
+    color: #000000;
+    border: 2px dashed #4CAF50;
+}
+
 
 /* input[type=text] {
     width: 100%;
