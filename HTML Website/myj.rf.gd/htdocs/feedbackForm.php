@@ -1,5 +1,7 @@
 <html>
     <head>
+        <link rel="icon" href="https://www.myj.rf.gd/MYJ_icon_updated.png">
+        <title>Feedback Form</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400&display=swap');
         body {
@@ -10,10 +12,21 @@
         }
         .form {
             font-family: "Spline Sans", sans-serif;
+            padding-top: 50px;
+            padding-right: 300px;
+            padding-left: 300px;
+        }
+        #feedback-div {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
         }
         table {
             width: 1000px;
-            margin: 50px;
+            margin: auto;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
         }
         input[type=text] {
             width: 100%;
@@ -58,19 +71,19 @@
             border: 2px solid #4CAF50;
         }
 
-        #back-mobile button :hover {
+        input[type=submit]:hover {
             transform: scale(1.1);
             background-color: #ffffff;
             color: #000000;
             border: 2px solid #4CAF50;
         }
 
-        input[type=submit] :hover {
-            transform: scale(1.1);
-            background-color: #ffffff;
-            color: #000000;
-            border: 2px solid #4CAF50;
+        #back-mobile {
+            /* display: none; */
+            margin: 10px;
+            position: fixed;
         }
+
 
         #back-mobile button {
             background-color: #04AA6D;
@@ -82,6 +95,12 @@
             cursor: pointer;
             border-radius: 8px;
             transition-duration: 0.4s;
+            border: 2px solid #4CAF50;
+        }
+        #back-mobile button:hover {
+            transform: scale(1.1);
+            background: #ffffff;
+            color: #000000;
             border: 2px solid #4CAF50;
         }
     </style>
@@ -117,7 +136,7 @@
             <a href="https://myj.rf.gd"><button>&#x25c0; Back to Home</button></a>
         </div>
 
-        <div id="feedback" class="form">
+        <div id="feedback-div" class="form">
             <h1>Feedback Form</h1>
             <form method="POST">
                 <input type="text" name="name" placeholder="Name" required><br>
@@ -125,27 +144,31 @@
                 <input type="text" name="message" placeholder="Message" required><br>
                 <input type="submit" name="submit" value="Submit">
             </form>
+            <?php
+            if(isset($_POST['submit'])) {
+                echo "<br><p><i>Submitted</i></p>";
+            }
+        ?>
             <p>Note this form is under development and expect updates to this form</p>
         </div>
 
-        <?php
-        if(isset($_POST['submit'])) {
-            echo "<br><p><i>Submitted</i></p>";
-        }
-        ?>
-
-        <h2>Existing Feedbacks</h2>
-        <?php
-            $query = $conn->query("SELECT * FROM feedback");
-            // ORDER BY DESC;
-            echo "<table border='2'>";
-            while ($row=$query->fetch_array(MYSQLI_ASSOC)) {
-                echo "<tr><td>";
-                echo "<h1>".$row['name']."</h1></td></tr>";
-                echo "<tr><td>".$row['message']."<br><br></td></tr>";
-            }
-            echo "</table>";
-        ?>
+        <div id="existing">
+            <h2>Existing Feedbacks</h2>
+            <p id="none"></p>
+            <?php
+                $query = $conn->query("SELECT * FROM feedback");
+                // $num = $query->num_rows();
+                // ORDER BY DESC;
+                while ($row=$query->fetch_array(MYSQLI_ASSOC)) {
+                    echo "<table border='2'>";
+                    echo "<tr><td>";
+                    echo "<h1>".$row['name']."</h1></td></tr>";
+                    echo "<tr><td>".$row['message']."<br><br></td></tr>";
+                    echo "</table>";
+                }
+                // echo "<script>if($num===0) {document.getElementById('none').innerHTML = 'New text!';}</script>";
+            ?>
+        </div>
         <script>
             if(window.history.replaceState) {
                 window.history.replaceState(null, null, window.location.href);
