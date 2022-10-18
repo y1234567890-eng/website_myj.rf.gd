@@ -27,6 +27,11 @@
             justify-content: center;
             align-items: center;
             text-align: center;
+            margin-top: 10px;
+            margin-bottom: 50px;
+        }
+        td {
+            padding: 20px;
         }
         input[type=text] {
             width: 100%;
@@ -164,6 +169,7 @@
                     echo "<tr><td>";
                     echo "<h1>".$row['name']."</h1></td></tr>";
                     echo "<tr><td>".$row['message']."<br><br></td></tr>";
+                    echo "<tr><td><b>Admin reply:</b><br><p style='text-align: left;'>Dear User,<br>".$row['reply']."</p></td></tr>";
                     echo "</table>";
                 }
                 // echo "<script>if($num===0) {document.getElementById('none').innerHTML = 'New text!';}</script>";
