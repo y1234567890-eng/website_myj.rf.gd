@@ -1,38 +1,9 @@
 <html>
     <head>
         <link rel="icon" href="https://www.myj.rf.gd/MYJ_icon_updated.png">
-        <title>Feedback Form</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400&display=swap');
-        body {
-            font-family: "Spline Sans", sans-serif;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-        .form {
-            font-family: "Spline Sans", sans-serif;
-            padding-top: 50px;
-            padding-right: 300px;
-            padding-left: 300px;
-        }
-        #feedback-div {
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-        table {
-            width: 1000px;
-            margin: auto;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            margin-top: 10px;
-            margin-bottom: 50px;
-        }
-        td {
-            padding: 20px;
-        }
+        <meta name="viewport" content="width=device-width">
+        <title>New Feedback</title>
+        <style>
         input[type=text] {
             width: 100%;
             padding: 12px 20px;
@@ -82,7 +53,17 @@
             color: #000000;
             border: 2px solid #4CAF50;
         }
-
+        .form {
+            font-family: "Spline Sans", sans-serif;
+            padding-top: 50px;
+            padding-right: 300px;
+            padding-left: 300px;
+        }
+        #feedback-div {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
         #back-mobile {
             /* display: none; */
             margin: 10px;
@@ -108,9 +89,27 @@
             color: #000000;
             border: 2px solid #4CAF50;
         }
-    </style>
+        </style>
     </head>
     <body>
+        <div id="back-mobile">
+            <a href="https://myj.rf.gd\feedback"><button>&#x25c0; Back</button></a>
+        </div>
+        <div id="feedback-div" class="form">
+            <h1>New Feedback</h1>
+            <form method="POST">
+                <input type="text" name="name" placeholder="Name" required><br>
+                <input type="email" name="email" placeholder="Email" required><br>
+                <input type="text" name="message" placeholder="Message" required><br>
+                <input type="submit" name="submit" value="Submit">
+            </form>
+            <?php
+            if(isset($_POST['submit'])) {
+                echo "<br><p><i>Submitted</i></p>";
+            }
+        ?>
+            <p>Note this form is under development and expect updates to this form</p>
+        </div>
         <?php
             $host="sql112.epizy.com";
             $dbuser="epiz_30389702";
@@ -136,45 +135,6 @@
                 // mail($sender,$name,$message,$email)
             }
         ?>
-
-        <div id="back-mobile">
-            <a href="https://myj.rf.gd"><button>&#x25c0; Back to Home</button></a>
-        </div>
-
-        <div id="feedback-div" class="form">
-            <h1>Feedback Form</h1>
-            <form method="POST">
-                <input type="text" name="name" placeholder="Name" required><br>
-                <input type="email" name="email" placeholder="Email" required><br>
-                <input type="text" name="message" placeholder="Message" required><br>
-                <input type="submit" name="submit" value="Submit">
-            </form>
-            <?php
-            if(isset($_POST['submit'])) {
-                echo "<br><p><i>Submitted</i></p>";
-            }
-        ?>
-            <p>Note this form is under development and expect updates to this form</p>
-        </div>
-
-        <div id="existing">
-            <h2>Existing Feedbacks</h2>
-            <p id="none"></p>
-            <?php
-                $query = $conn->query("SELECT * FROM feedback");
-                // $num = $query->num_rows();
-                // ORDER BY DESC;
-                while ($row=$query->fetch_array(MYSQLI_ASSOC)) {
-                    echo "<table border='2'>";
-                    echo "<tr><td>";
-                    echo "<h1>".$row['name']."</h1></td></tr>";
-                    echo "<tr><td>".$row['message']."<br><br></td></tr>";
-                    echo "<tr><td><b>Admin reply:</b><br><p style='text-align: left;'>Dear User,<br>".$row['reply']."</p></td></tr>";
-                    echo "</table>";
-                }
-                // echo "<script>if($num===0) {document.getElementById('none').innerHTML = 'New text!';}</script>";
-            ?>
-        </div>
         <script>
             if(window.history.replaceState) {
                 window.history.replaceState(null, null, window.location.href);
