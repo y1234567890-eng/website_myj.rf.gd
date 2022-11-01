@@ -89,6 +89,30 @@
             color: #000000;
             border: 2px solid #4CAF50;
         }
+        @media only screen and (max-width: 900px) {
+            .form {
+                padding-right: 100px;
+                padding-left: 100px;
+            }
+        }
+        @media only screen and (max-width: 400px) {
+            .form {
+                padding-right: 50px;
+                padding-left: 50px;
+            }
+        }
+        @media only screen and (max-width: 200px) {
+            .form {
+                padding-right: 25px;
+                padding-left: 25px;
+            }
+        }
+        @media only screen and (max-width: 100px) {
+            .form {
+                padding-right: 10px;
+                padding-left: 10px;
+            }
+        }
         </style>
     </head>
     <body>
