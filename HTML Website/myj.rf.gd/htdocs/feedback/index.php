@@ -57,16 +57,20 @@
             align-items: center;
             text-align: center;
             width: 100%;
+            bottom: 15px;
+            margin-right: auto;
+            margin-left:auto;
+            z-index: 5;
         }
         #add-feedback button {
             background-color: #04AA6D;
             border: none;
             color: #FFFFFF;
-            padding: 10px 10px;
+            padding: 12px 10px;
             text-decoration: none;
-            bottom: 4px;
+            /* bottom: 4px;
             margin-right: auto;
-            margin-left:auto;
+            margin-left:auto; */
             /* left: 50%; */
             /* right: 50%; */
             /* transform: translate(-50%, -50%); */

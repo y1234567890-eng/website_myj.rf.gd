@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400&display=swap');
+body {
+    margin: 0;
+    background: #FFFFFF;
+    font-family: "Spline Sans", sans-serif;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    background: #800000;
+    height: 75px;
+    z-index: 5;
+}
+
+#inner-nav {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+#logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    height: 10px;
+    width: 10px;
+}
+
+#nav-btns {
+    margin-right: 15px;
+    display: flex;
+}
+
+#nav-btns button {
+    padding-top: 27px;
+    padding-bottom: 27px;
+    background: #800000;
+    color: #FFFFFF;
+    font-family: "Fredoka", sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    border: none;
+    transition: 0.5s;
+}
+
+#nav-btns button:hover {
+    background: rgb(153, 0, 0);
+    color: rgb(255, 153, 0);
+}
+
+.selectedbtn {
+    /* padding-bottom: 20px;
+	border-bottom: 7px solid #FFFFFF; */
+    position: relative;
+}
+
+.selectedbtn::before {
+    content: "";
+    position: absolute;
+    top: 90%;
+    left: 0;
+    width: 100%;
+    height: 0.6rem;
+    background-color: rgb(255, 255, 255);
+}
+
+.hover-nav {
+    display: none;
+    position: fixed;
+    width: 80px;
+    background: #800000;
+    top: 73px;
+    /* height: 300px; */
+    height: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 12px;
+    border: 1px #000000 solid;
+    box-shadow: #000000;
+    z-index: 4;
+}
+
+#nav-play {
+    right: 255px;
+}
+
+#nav-yt {
+    right: 180px;
+}
+
+#nav-scratch {
+    right: 115px;
+}
+
+.hover-nav button {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background: #800000;
+    color: #FFFFFF;
+    font-family: "Fredoka", sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    border: none;
+    transition: 0.5s;
+    width: 100%;
+}
+
+.hover-nav button:hover {
+    background: rgb(153, 0, 0);
+    color: rgb(255, 153, 0);
+}
+
+.drp-name {}
+
+.heading {
+    display: flex;
+    width: 100%;
+    background: rgb(255, 255, 255);
+    /* height: 300px; */
+    height: auto;
+    padding-top: 100px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: "Spline Sans", sans-serif;
+}
+
+.heading-sub {
+    display: flex;
+    width: 100%;
+    background: rgb(255, 255, 255);
+    /* height: 300px; */
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: "Spline Sans", sans-serif;
+}
+
+.label {
+    width: 100%;
+    font-family: "Spline Sans", sans-serif;
+    margin-top: 10px;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: rgb(255, 255, 255);
+}
+
+.video {
+    width: 100%;
+    font-family: "Spline Sans", sans-serif;
+    margin-top: 10px;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: rgb(255, 255, 255);
+}
+
+.video-vid iframe {
+    width: 400px;
+    height: 225px;
+}
+
+.line {
+    margin-bottom: 20px;
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 50%;
+    height: 2px;
+    background: rgb(211, 211, 211);
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 1;
+}
+
+#back-mobile {
+    /* display: none; */
+    margin: 10px;
+    position: fixed;
+}
+
+#back-mobile button:hover {
+    transform: scale(1.1);
+    background: #ffffff;
+    color: #000000;
+    border: 2px solid #4CAF50;
+}
+
+#back-mobile button {
+    background-color: #04AA6D;
+    border: none;
+    color: #FFFFFF;
+    padding: 10px 10px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition-duration: 0.4s;
+    border: 2px solid #4CAF50;
+}
+
+#bottom-style {
+    margin-bottom: 50px;
+    margin-top: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 50%;
+    height: 2px;
+    background: rgb(255, 255, 255);
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 1;
+}
+
+@media only screen and (max-width: 945px) {
+    nav {
+        display: none;
+    }
+    .card1 {
+        margin: 20px 150px;
+    }
+    #back-mobile {
+        display: block;
+    }
+    .video-vid iframe {
+        width: 400px;
+        height: 225px;
+    }
+}
+
+@media only screen and (max-width: 641px) {
+    .video-vid iframe {
+        width: 300px;
+        height: 169px;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .video-vid iframe {
+        width: 200px;
+        height: 113px;
+    }
+}
