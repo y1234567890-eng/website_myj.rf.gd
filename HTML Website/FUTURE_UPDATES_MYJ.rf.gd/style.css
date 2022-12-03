@@ -514,6 +514,12 @@ nav .fa-bars {
     margin-left: 10%;
 } */
 
+#inner-reviews {
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
 #user-reviews {
     background-color: #FFFFFF;
     /* overflow: auto; */
@@ -521,6 +527,27 @@ nav .fa-bars {
     /* width: 70%; */
     margin-left: 0px;
     margin-right: 0px;
+}
+
+.review-quote-design {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: #6285bc;
+    color: #FFFFFF;
+    height: 187px;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-overflow: ellipsis;
+}
+
+.single-review {
+    width: 287px;
+    height: 220px;
+    padding: 5%;
+    margin: auto;
+    text-overflow: ellipsis;
 }
 
 #contact-us {
