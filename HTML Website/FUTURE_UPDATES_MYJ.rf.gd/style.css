@@ -867,7 +867,13 @@ input[type=reset]:hover {
     padding-right: 2%;
 }
 
-@media (max-width: 940px) {
+@media only screen and (max-width: 450px) {
+    .single-review {
+        height: 230px;
+    }
+}
+
+@media only screen and (max-width: 940px) {
     #advantages-image {
         display: none;
     }
@@ -881,7 +887,7 @@ input[type=reset]:hover {
     }
 }
 
-@media (max-width: 630px) {
+@media only screen and (max-width: 630px) {
     #what-image {
         display: none;
     }
