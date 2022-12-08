@@ -236,13 +236,86 @@
         <div id="inner-reviews">
             <h1>What people are saying</h1>
             <h2>You can see user reviews below.</h2>
-            <div id="user-reviews">
+            <!-- <div id="user-reviews">
                 <img src="review_abdullah_swoosh.png">
                 <img src="review_konstantinas_feetz.png">
                 <img src="review_w1_assistant.png">
                 <img src="review_w1_translate.png">
                 <img src="review_w2_translate.png">
+            </div> -->
+            <!-- <div id="single-review" class="single-review">
+                <div id="inner-review-review" class="review-quote-design">
+                    <img src="quote_sign.PNG" alt="quote-sign">
+                    <p>review</p>
+                </div>
+                <p>Name</p>
+            </div> -->
+            <?php
+                $host="sql112.epizy.com";
+                $dbuser="epiz_30389702";
+                $dbpassword="VjgiAEJdCn4";
+                $dbname="epiz_30389702_database";
+                $conn = new mysqli($host, $dbuser, $dbpassword, $dbname);
+                $success = "Success!";
+                $fail = "Not Connected";
+                if($conn) {
+                    echo "<script>console.log('{$success}' );</script>";
+                }
+                else {
+                    echo "<script>console.log('{$fail}' );</script>";
+                }
+
+                $query = $conn->query("SELECT * FROM feedback ORDER BY id DESC LIMIT 3");
+                while ($row=$query->fetch_array(MYSQLI_ASSOC)) {
+                    echo "<div id='single-review' class='single-review'>";
+                    echo "<div id='inner-review-review' class='review-quote-design'>";
+                    echo "<img src='quote_sign.PNG' alt='quote-sign'>";
+                    echo "<p>".$row['message']."</p>";
+                    echo "<div class='ellipsis'>...</div>";
+                    echo "</div>";
+                    echo "<p>".$row['name']."</p>";
+                    echo "<div class='ellipsis'>...</div>";
+                    echo "</div>";
+                }
+            ?>
+            <br>
+            <a href="feedback">See all &rarr;</a>
+
+            <!-- <div id="single-review" class="single-review">
+                <div id="inner-review-review" class="review-quote-design">
+                    <img src="quote_sign.PNG" alt="quote-sign">
+                    <p>review</p>
+                </div>
+                <p>Name</p>
             </div>
+            <div id="single-review" class="single-review">
+                <div id="inner-review-review" class="review-quote-design">
+                    <img src="quote_sign.PNG" alt="quote-sign">
+                    <p>review</p>
+                </div>
+                <p>Name</p>
+            </div>
+            <div id="single-review" class="single-review">
+                <div id="inner-review-review" class="review-quote-design">
+                    <img src="quote_sign.PNG" alt="quote-sign">
+                    <p>review</p>
+                </div>
+                <p>Name</p>
+            </div>
+            <div id="single-review" class="single-review">
+                <div id="inner-review-review" class="review-quote-design">
+                    <img src="quote_sign.PNG" alt="quote-sign">
+                    <p>review</p>
+                </div>
+                <p>Name</p>
+            </div>
+            <div id="single-review" class="single-review">
+                <div id="inner-review-review" class="review-quote-design">
+                    <img src="quote_sign.PNG" alt="quote-sign">
+                    <p>review</p>
+                </div>
+                <p>Name</p>
+            </div> -->
         </div>
     </div>
 

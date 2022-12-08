@@ -495,7 +495,7 @@ nav .fa-bars {
 }
 
 #reviews p {
-    margin: 0%;
+    /* margin: 0%; */
     font-weight: 300;
     font-size: 18px;
     padding-top: 3%;
@@ -514,6 +514,22 @@ nav .fa-bars {
     margin-left: 10%;
 } */
 
+#inner-reviews {
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+#inner-reviews a {
+    margin-top: 20px;
+    color: #f47300;
+    font-size: 1.3em;
+}
+
+#inner-reviews a:hover {
+    text-decoration: underline;
+}
+
 #user-reviews {
     background-color: #FFFFFF;
     /* overflow: auto; */
@@ -521,6 +537,58 @@ nav .fa-bars {
     /* width: 70%; */
     margin-left: 0px;
     margin-right: 0px;
+}
+
+.review-quote-design {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: #6285bc;
+    color: #FFFFFF;
+    height: 187px;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.review-quote-design p {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    word-break: break-all;
+    max-height: 3em;
+    position: relative;
+    margin: 10%;
+}
+
+.single-review {
+    width: 287px;
+    height: 220px;
+    padding: 5%;
+    margin: auto;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.single-review p {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    word-break: break-all;
+    max-height: 3em;
+    position: relative;
+    margin: 10%;
+}
+
+.ellipsis {
+    position: absolute;
+    right: 0;
+    top: calc(4em + 2px - 100%);
+    text-align: left;
 }
 
 #contact-us {
