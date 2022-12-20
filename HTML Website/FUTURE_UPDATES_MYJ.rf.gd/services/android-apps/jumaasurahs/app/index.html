@@ -3,8 +3,9 @@
 
 <head>
     <link rel="icon" href="../../../../MYJ_icon_updated.png" />
-    <title>MYJ Calculator</title>
+    <title>MYJ Juma'a Surahs</title>
     <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300&display=swap');
@@ -144,85 +145,11 @@
 
     <div id="intro">
         <div id="inner-intro">
-            <img src="../../../../play-store/calculator.png" alt="Calculator Logo" style="border-radius: 8px;" width="100px">
-            <h1>MYJ Calculator</h1>
-            <!-- <h2>Bringing MYJ Android Apps Into The Online World</h2>
-            <h3 style="padding-top: 20px;">Categories</h3>
-            <button style="background: rgb(255, 230, 0); color: rgb(255, 145, 0); margin-top: 5px;border: none; border-radius: 8px; padding: 5px 5px; height: auto;">Calculator</button><button style="background: rgb(0, 255, 64); color: rgb(81, 143, 0); border: none; border-radius: 8px; padding: 5px 5px; height: auto;">Android-App</button> -->
-            <div id="calculator">
-                <form>
-                    <input id="num1" type="number" placeholder="Enter number 1" required/><br>
-                    <input id="num2" type="number" placeholder="Enter number 2" required/><br>
-                    <p>Choose an operator:</p>
-                    <input type="submit" value="+" onclick="calculateadd()" />
-                    <input type="submit" value="-" onclick="calculatesubtract()" />
-                    <input type="submit" value="*" onclick="calculatemultiply()" />
-                    <input type="submit" value="/" onclick="calculatedivide()" />
-                </form>
-                <p id="answer"></p>
-                <p id="final-answer"></p>
+            <img src="../../../../play-store/jumaasurahs.png" alt="Calculator Logo" style="border-radius: 8px;" width="100px">
+            <h1>MYJ Juma'a Surahs</h1>
+            <div id="surahs">
+                <h2>Surah Kahf</h2>
             </div>
-        </div>
-    </div>
-    <script type="text/javascript">
-        var final = document.getElementById('final-answer');
-        var num1 = 0;
-        var num2 = 0;
-        var total = 0;
-        var answer = document.getElementById('answer');
-
-        function calculateadd() {
-            event.preventDefault()
-            num1 = document.getElementById('num1').value;
-            num2 = document.getElementById('num2').value;
-            if (isNaN(parseInt(num1)) || isNaN(parseInt(num2))) {
-                alert("Please ensure both numbers are valid.")
-            } else {
-                total = +num1 + +num2;
-                answer.innerHTML = "The answer is:"
-                final.innerHTML = total;
-            }
-        }
-
-        function calculatesubtract() {
-            event.preventDefault()
-            num1 = document.getElementById('num1').value;
-            num2 = document.getElementById('num2').value;
-            if (isNaN(parseInt(num1)) || isNaN(parseInt(num2))) {
-                alert("Please ensure both numbers are valid.")
-            } else {
-                total = +num1 - +num2;
-                answer.innerHTML = "The answer is:"
-                final.innerHTML = total;
-            }
-        }
-
-        function calculatemultiply() {
-            event.preventDefault()
-            num1 = document.getElementById('num1').value;
-            num2 = document.getElementById('num2').value;
-            if (isNaN(parseInt(num1)) || isNaN(parseInt(num2))) {
-                alert("Please ensure both numbers are valid.")
-            } else {
-                total = +num1 * +num2;
-                answer.innerHTML = "The answer is:"
-                final.innerHTML = total;
-            }
-        }
-
-        function calculatedivide() {
-            event.preventDefault()
-            num1 = document.getElementById('num1').value;
-            num2 = document.getElementById('num2').value;
-            if (isNaN(parseInt(num1)) || isNaN(parseInt(num2))) {
-                alert("Please ensure both numbers are valid.")
-            } else {
-                total = +num1 / +num2;
-                answer.innerHTML = "The answer is:"
-                final.innerHTML = total;
-            }
-        }
-    </script>
 </body>
 </body>
 
