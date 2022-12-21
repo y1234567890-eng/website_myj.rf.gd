@@ -134,6 +134,26 @@
         #calculator input[type=number]:focus {
             border: 3px solid #4CAF50;
         }
+        
+        #mobile {
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            display: none;
+        }
+        
+        #inner-mobile {
+            margin: auto;
+        }
+        
+        @media only screen and (hover: none) and (pointer: coarse) {
+            #mobile {
+                display: block;
+            }
+            #calculator {
+                display: none;
+            }
+        }
     </style>
 </head>
 
@@ -161,6 +181,14 @@
                 </form>
                 <p id="answer"></p>
                 <p id="final-answer"></p>
+            </div>
+            <div id="mobile">
+                <div id="inner-mobile">
+                    <h3>This app is not available online on mobile.</h3>
+                    <h3>Get this app using Google Play</h3>
+                    <a href="https://play.google.com/store/apps/details?id=com.yousufjamil.calculator" target="_blank" rel="noopener noreferrer"><img src="../../play.png" alt="Get it on Google Play" width="150px"></a>
+                    <p>Still want to try the browser version? It may not work perfectly. <a onclick="openWeb()">Click here</a> to load the page online.</p>
+                </div>
             </div>
         </div>
     </div>
@@ -221,6 +249,13 @@
                 answer.innerHTML = "The answer is:"
                 final.innerHTML = total;
             }
+        }
+    </script>
+
+    <script type="text/javascript">
+        function openWeb() {
+            document.getElementById('mobile').style.display = 'none';
+            document.getElementById('calculator').style.display = 'block';
         }
     </script>
 

@@ -41,6 +41,7 @@
                 echo "<h2>".$row['name']."</h2>";
                 echo "<p>Description: ".$row['description']."</p>";
                 echo "</div>";
+                echo "</div>";
             }
         ?>
     </div>

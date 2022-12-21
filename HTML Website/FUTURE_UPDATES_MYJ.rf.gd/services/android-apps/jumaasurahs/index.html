@@ -3,7 +3,7 @@
 
 <head>
     <link rel="icon" href="../../../MYJ_icon_updated.png" />
-    <title>MYJ Calculator</title>
+    <title>MYJ Juma'a Surahs</title>
     <meta name="viewport" content="width=device-width">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100&display=swap');
@@ -118,6 +118,29 @@
             <a href="app"><button>Open app &rarr;</button></a>
         </div>
     </div>
+
+    <script type='text/javascript'>
+        (function(I, L, T, i, c, k, s) {
+            if (I.iticks) return;
+            I.iticks = {
+                host: c,
+                settings: s,
+                clientId: k,
+                cdn: L,
+                queue: []
+            };
+            var h = T.head || T.documentElement;
+            var e = T.createElement(i);
+            var l = I.location;
+            e.async = true;
+            e.src = (L || c) + '/client/inject-v2.min.js';
+            h.insertBefore(e, h.firstChild);
+            I.iticks.call = function(a, b) {
+                I.iticks.queue.push([a, b]);
+            };
+        })(window, 'https://cdn-v1.intelliticks.com/prod/common', document, 'script', 'https://app.intelliticks.com', '24dSCuYprvQfPp73d_c', {});
+    </script>
+
 </body>
 
 </html>

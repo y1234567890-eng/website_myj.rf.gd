@@ -66,6 +66,37 @@
             justify-content: center;
             align-items: center;
             text-align: center;
+            z-index: 3;
+        }
+        
+        #bg {
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            position: fixed;
+            z-index: 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 1)), url(../bg2.jpeg);
+        }
+        
+        p {
+            color: #FFFFFF;
+        }
+        
+        #bg a {
+            text-decoration: none;
+            color: #FFFFFF;
+        }
+        
+        #bg a:hover {
+            text-decoration: underline;
+        }
+        
+        #bg p {
+            bottom: 0;
+            right: 5px;
+            position: fixed;
+            z-index: 10;
         }
         
         #inner-intro {
@@ -73,12 +104,15 @@
             justify-content: center;
             align-items: center;
             text-align: center;
+            height: 90vh;
+            z-index: 3;
         }
         
         #back-mobile {
             /* display: none; */
             margin: 10px;
             position: fixed;
+            z-index: 4;
         }
         
         #back-mobile button:hover {
@@ -135,12 +169,71 @@
         #calculator input[type=number]:focus {
             border: 3px solid #4CAF50;
         }
+        
+        iframe {
+            height: 450px;
+            width: 1000px;
+        }
+        
+        #mobile {
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            display: none;
+        }
+        
+        #inner-mobile {
+            margin: auto;
+        }
+        
+        @media only screen and (max-width: 1050px) {
+            iframe {
+                max-width: 750px;
+            }
+        }
+        
+        @media only screen and (max-width: 800px) {
+            iframe {
+                max-width: 500px;
+            }
+        }
+        
+        @media only screen and (max-width: 550px) {
+            iframe {
+                max-width: 250px;
+            }
+        }
+        
+        @media only screen and (max-width: 300px) {
+            iframe {
+                max-width: 150px;
+            }
+        }
+        
+        @media only screen and (max-width: 200px) {
+            iframe {
+                max-width: 100px;
+            }
+        }
+        
+        @media only screen and (hover: none) and (pointer: coarse) {
+            #mobile {
+                display: block;
+            }
+            #surahs {
+                display: none;
+            }
+        }
     </style>
 </head>
 
 <body>
     <div id="back-mobile">
-        <a href="https://myj.rf.gd/services/android-apps/calculator"><button>&#x25c0; Back</button></a>
+        <a href="https://myj.rf.gd/services/android-apps/jumaasurahs"><button>&#x25c0; Back</button></a>
+    </div>
+
+    <div id="bg">
+        <p>Original content: <a href="https://quran.com">Quran.com</a></p>
     </div>
 
     <div id="intro">
@@ -149,7 +242,51 @@
             <h1>MYJ Juma'a Surahs</h1>
             <div id="surahs">
                 <h2>Surah Kahf</h2>
+                <iframe src="https://quran.com/18" frameborder="0"></iframe>
+                <h2>Surah Dukhan</h2>
+                <iframe src="https://quran.com/44" frameborder="0"></iframe>
+                <h2>Surah Juma'a</h2>
+                <iframe src="https://quran.com/62" frameborder="0"></iframe>
             </div>
+            <div id="mobile">
+                <div id="inner-mobile">
+                    <h3>This app is not available online on mobile.</h3>
+                    <h3>Get this app using Google Play</h3>
+                    <a href="https://play.google.com/store/apps/details?id=com.yousufjamil.jumaasurahs" target="_blank" rel="noopener noreferrer"><img src="../../play.png" alt="Get it on Google Play" width="150px"></a>
+                    <p>Still want to try the browser version? It may not work perfectly. <a onclick="openWeb()">Click here</a> to load the page online.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        function openWeb() {
+            document.getElementById('mobile').style.display = 'none';
+            document.getElementById('surahs').style.display = 'block';
+        }
+    </script>
+
+    <script type='text/javascript'>
+        (function(I, L, T, i, c, k, s) {
+            if (I.iticks) return;
+            I.iticks = {
+                host: c,
+                settings: s,
+                clientId: k,
+                cdn: L,
+                queue: []
+            };
+            var h = T.head || T.documentElement;
+            var e = T.createElement(i);
+            var l = I.location;
+            e.async = true;
+            e.src = (L || c) + '/client/inject-v2.min.js';
+            h.insertBefore(e, h.firstChild);
+            I.iticks.call = function(a, b) {
+                I.iticks.queue.push([a, b]);
+            };
+        })(window, 'https://cdn-v1.intelliticks.com/prod/common', document, 'script', 'https://app.intelliticks.com', '24dSCuYprvQfPp73d_c', {});
+    </script>
 </body>
 </body>
 
