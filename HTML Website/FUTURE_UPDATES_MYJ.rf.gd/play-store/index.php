@@ -100,7 +100,81 @@
     <div class="heading">
         <h1>Our Apps</h1>
     </div>
+
     <div class="cards">
+        <?php
+            $host="sql112.epizy.com";
+            $dbuser="epiz_30389702";
+            $dbpassword="VjgiAEJdCn4";
+            $dbname="epiz_30389702_database";
+            $conn = new mysqli($host, $dbuser, $dbpassword, $dbname);
+            $success = "Success!";
+            $fail = "Not Connected";
+            if($conn) {
+                echo "<script>console.log('{$success}' );</script>";
+            }
+            else {
+                echo "<script>console.log('{$fail}' );</script>";
+            }
+            $query = $conn->query("SELECT * FROM `play-store`");
+
+            while ($row=$query->fetch_array(MYSQLI_ASSOC)) {
+                echo "<div class='card1'>";
+                echo "<div class='left-card1'>";
+                echo "<img src='".$row['logo']."' width='80px'>";
+                echo "<p>".$row['name']."</p>";
+                echo "<p> Price: ".$row['price']."</p>";
+                echo "<a href='".$row['url']."'><button>Download App ></button></a>";
+                echo "</div>";
+                echo "<div class='right-card1'>";
+                echo "<h2>".$row['name2']."</h2>";
+                echo "<p>Description: ".$row['description']."</p>";
+                echo "</div>";
+                echo "</div>";
+            }
+        ?>
+    </div>
+
+    <div class="heading">
+        <h1>Our work for other companies</h1>
+    </div>
+
+    <div class="cards">
+        <?php
+            $host="sql112.epizy.com";
+            $dbuser="epiz_30389702";
+            $dbpassword="VjgiAEJdCn4";
+            $dbname="epiz_30389702_database";
+            $conn = new mysqli($host, $dbuser, $dbpassword, $dbname);
+            $success = "Success!";
+            $fail = "Not Connected";
+            if($conn) {
+                echo "<script>console.log('{$success}' );</script>";
+            }
+            else {
+                echo "<script>console.log('{$fail}' );</script>";
+            }
+            $query = $conn->query("SELECT * FROM `play-store-other`");
+
+            while ($row=$query->fetch_array(MYSQLI_ASSOC)) {
+                echo "<div class='card1'>";
+                echo "<div class='left-card1'>";
+                echo "<img src='".$row['logo']."' width='80px'>";
+                echo "<p>".$row['name']."</p>";
+                echo "<p> Price: ".$row['price']."</p>";
+                echo "<a href='".$row['url']."'><button>Download App ></button></a>";
+                echo "</div>";
+                echo "<div class='right-card1'>";
+                echo "<h2>".$row['name2']."</h2>";
+                echo "<p>Description: ".$row['description']."</p>";
+                echo "</div>";
+                echo "</div>";
+            }
+        ?>
+    </div>
+
+
+    <!-- <div class="cards">
         <div class="card1">
             <div class="left-card1">
                 <img src="smart.png" alt="MYJ Smart Assistant App Icon" width="80px">
@@ -247,7 +321,7 @@
                     </ul><br> & much more...</p>
             </div>
         </div>
-    </div>
+    </div> -->
 
 
     <!-- <div id="reviews">
