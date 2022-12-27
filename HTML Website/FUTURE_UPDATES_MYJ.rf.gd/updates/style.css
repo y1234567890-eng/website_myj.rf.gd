@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400&display=swap');
+body {
+    margin: 0;
+    background: #FFFFFF;
+}
+
+.heading {
+    display: flex;
+    width: 100%;
+    background: rgb(255, 255, 255);
+    /* height: 300px; */
+    height: auto;
+    padding-top: 100px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: "Spline Sans", sans-serif;
+}
+
+.heading-sub {
+    display: flex;
+    width: 100%;
+    background: rgb(255, 255, 255);
+    /* height: 300px; */
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: "Spline Sans", sans-serif;
+}
+
+.cards {
+    width: 100%;
+    background: rgb(255, 255, 255);
+    /* height: 300px; */
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: "Spline Sans", sans-serif;
+    margin-top: 10px;
+}
+
+.cards button {
+    background: #4CAF50;
+    color: #FFFFFF;
+    height: 40px;
+    border-radius: 8px;
+    border: 2px solid #4CAF50;
+    transition-duration: 0.5s;
+}
+
+.cards button:hover {
+    background: #FFFFFF;
+    color: #000000;
+    border: 2px solid #4CAF50;
+}
+
+.card1 {
+    display: flex;
+    margin: 20px 300px;
+    border-style: solid;
+    transition-duration: 0.5s;
+}
+
+.card1:hover {
+    transform: scale(1.1);
+}
+
+.left-card1 {
+    background: rgb(233, 233, 233);
+    padding: 10px;
+    width: 200px;
+}
+
+.left-card1 img {
+    border-radius: 8px;
+}
+
+.right-card1 {
+    background: rgb(255, 255, 255);
+    padding: 10px;
+    width: 500px;
+}
+
+#back-mobile {
+    /* display: none; */
+    margin: 10px;
+    position: fixed;
+}
+
+#back-mobile button:hover {
+    transform: scale(1.1);
+    background: #ffffff;
+    color: #000000;
+    border: 2px solid #4CAF50;
+}
+
+#back-mobile button {
+    background-color: #04AA6D;
+    border: none;
+    color: #FFFFFF;
+    padding: 10px 10px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition-duration: 0.4s;
+    border: 2px solid #4CAF50;
+}
+
+@media only screen and (max-width: 945px) {
+    nav {
+        display: none;
+    }
+    .card1 {
+        margin: 20px 150px;
+    }
+    #back-mobile {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 641px) {
+    .card1 {
+        margin: 20px 75px;
+    }
+}
+
+@media only screen and (max-width: 495px) {
+    .card1 {
+        margin: 20px 20px;
+    }
+}
