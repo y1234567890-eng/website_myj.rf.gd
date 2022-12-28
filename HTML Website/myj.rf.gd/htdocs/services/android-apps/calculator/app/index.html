@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="../../../../MYJ_icon_updated.png" />
+    <title>MYJ Calculator</title>
+    <meta name="viewport" content="width=device-width">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400&display=swap');
+        body {
+            margin: 0;
+            font-family: "Spline Sans", sans-serif;
+            /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgb(255, 255, 255)), url(bg3.jpeg) no-repeat fixed center;
+            background-size: 100%;
+            background-repeat: no-repeat; */
+        }
+        
+        button {
+            background-color: #04AA6D;
+            border: none;
+            color: #FFFFFF;
+            padding: 16px 32px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition-duration: 0.4s;
+            border: 2px solid #4CAF50;
+        }
+        
+        button:hover {
+            background-color: #ffffff;
+            color: #000000;
+            border: 2px solid #4CAF50;
+            transform: scale(1.1);
+        }
+        
+        button:focus {
+            background-color: #ffffff;
+            color: #000000;
+            border: 2px dashed #4CAF50;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        a:focus {
+            color: #ff0000;
+        }
+        
+        #intro {
+            display: flex;
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 1)), url(../bg2.jpeg);
+            background-size: cover;
+            height: 100vh;
+            color: #FFFFFF;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        #inner-intro {
+            padding-top: 60px;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        #back-mobile {
+            /* display: none; */
+            margin: 10px;
+            position: fixed;
+        }
+        
+        #back-mobile button:hover {
+            transform: scale(1.1);
+            background: #ffffff;
+            color: #000000;
+            border: 2px solid #4CAF50;
+        }
+        
+        #back-mobile button {
+            background-color: #04AA6D;
+            border: none;
+            color: #FFFFFF;
+            padding: 10px 10px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition-duration: 0.4s;
+            border: 2px solid #4CAF50;
+        }
+        
+        #calculator input[type=submit] {
+            background-color: #04AA6D;
+            border: none;
+            color: #FFFFFF;
+            padding: 16px 32px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition-duration: 0.4s;
+            border: 2px solid #4CAF50;
+        }
+        
+        #calculator input[type=submit]:hover {
+            background-color: #ffffff;
+            color: #000000;
+            border: 2px solid #4CAF50;
+        }
+        
+        #calculator input[type=number] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 2px 0;
+            box-sizing: border-box;
+            border: 3px solid #ccc;
+            -webkit-transition: 0.5s;
+            transition: 0.5s;
+            outline: none;
+            border-radius: 8px;
+        }
+        
+        #calculator input[type=number]:focus {
+            border: 3px solid #4CAF50;
+        }
+        
+        #mobile {
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            display: none;
+        }
+        
+        #inner-mobile {
+            margin: auto;
+        }
+        
+        @media only screen and (hover: none) and (pointer: coarse) {
+            #mobile {
+                display: block;
+            }
+            #calculator {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="back-mobile">
+        <a href="https://myj.rf.gd/services/android-apps/calculator"><button>&#x25c0; Back</button></a>
+    </div>
+
+    <div id="intro">
+        <div id="inner-intro">
+            <img src="../../../../play-store/calculator.png" alt="Calculator Logo" style="border-radius: 8px;" width="100px">
+            <h1>MYJ Calculator</h1>
+            <!-- <h2>Bringing MYJ Android Apps Into The Online World</h2>
+            <h3 style="padding-top: 20px;">Categories</h3>
+            <button style="background: rgb(255, 230, 0); color: rgb(255, 145, 0); margin-top: 5px;border: none; border-radius: 8px; padding: 5px 5px; height: auto;">Calculator</button><button style="background: rgb(0, 255, 64); color: rgb(81, 143, 0); border: none; border-radius: 8px; padding: 5px 5px; height: auto;">Android-App</button> -->
+            <div id="calculator">
+                <form>
+                    <input id="num1" type="number" placeholder="Enter number 1" required/><br>
+                    <input id="num2" type="number" placeholder="Enter number 2" required/><br>
+                    <p>Choose an operator:</p>
+                    <input type="submit" value="+" onclick="calculateadd()" />
+                    <input type="submit" value="-" onclick="calculatesubtract()" />
+                    <input type="submit" value="*" onclick="calculatemultiply()" />
+                    <input type="submit" value="/" onclick="calculatedivide()" />
+                </form>
+                <p id="answer"></p>
+                <p id="final-answer"></p>
+            </div>
+            <div id="mobile">
+                <div id="inner-mobile">
+                    <h3>This app is not available online on mobile.</h3>
+                    <h3>Get this app using Google Play</h3>
+                    <a href="https://play.google.com/store/apps/details?id=com.yousufjamil.calculator" target="_blank" rel="noopener noreferrer"><img src="../../play.png" alt="Get it on Google Play" width="150px"></a>
+                    <p>Still want to try the browser version? It may not work perfectly. <a onclick="openWeb()">Click here</a> to load the page online.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var final = document.getElementById('final-answer');
+        var num1 = 0;
+        var num2 = 0;
+        var total = 0;
+        var answer = document.getElementById('answer');
+
+        function calculateadd() {
+            event.preventDefault()
+            num1 = document.getElementById('num1').value;
+            num2 = document.getElementById('num2').value;
+            if (isNaN(parseInt(num1)) || isNaN(parseInt(num2))) {
+                alert("Please ensure both numbers are valid.")
+            } else {
+                total = +num1 + +num2;
+                answer.innerHTML = "The answer is:"
+                final.innerHTML = total;
+            }
+        }
+
+        function calculatesubtract() {
+            event.preventDefault()
+            num1 = document.getElementById('num1').value;
+            num2 = document.getElementById('num2').value;
+            if (isNaN(parseInt(num1)) || isNaN(parseInt(num2))) {
+                alert("Please ensure both numbers are valid.")
+            } else {
+                total = +num1 - +num2;
+                answer.innerHTML = "The answer is:"
+                final.innerHTML = total;
+            }
+        }
+
+        function calculatemultiply() {
+            event.preventDefault()
+            num1 = document.getElementById('num1').value;
+            num2 = document.getElementById('num2').value;
+            if (isNaN(parseInt(num1)) || isNaN(parseInt(num2))) {
+                alert("Please ensure both numbers are valid.")
+            } else {
+                total = +num1 * +num2;
+                answer.innerHTML = "The answer is:"
+                final.innerHTML = total;
+            }
+        }
+
+        function calculatedivide() {
+            event.preventDefault()
+            num1 = document.getElementById('num1').value;
+            num2 = document.getElementById('num2').value;
+            if (isNaN(parseInt(num1)) || isNaN(parseInt(num2))) {
+                alert("Please ensure both numbers are valid.")
+            } else {
+                total = +num1 / +num2;
+                answer.innerHTML = "The answer is:"
+                final.innerHTML = total;
+            }
+        }
+    </script>
+
+    <script type="text/javascript">
+        function openWeb() {
+            document.getElementById('mobile').style.display = 'none';
+            document.getElementById('calculator').style.display = 'block';
+        }
+    </script>
+
+    <script type='text/javascript'>
+        (function(I, L, T, i, c, k, s) {
+            if (I.iticks) return;
+            I.iticks = {
+                host: c,
+                settings: s,
+                clientId: k,
+                cdn: L,
+                queue: []
+            };
+            var h = T.head || T.documentElement;
+            var e = T.createElement(i);
+            var l = I.location;
+            e.async = true;
+            e.src = (L || c) + '/client/inject-v2.min.js';
+            h.insertBefore(e, h.firstChild);
+            I.iticks.call = function(a, b) {
+                I.iticks.queue.push([a, b]);
+            };
+        })(window, 'https://cdn-v1.intelliticks.com/prod/common', document, 'script', 'https://app.intelliticks.com', '24dSCuYprvQfPp73d_c', {});
+    </script>
+</body>
+</body>
+
+</html>
