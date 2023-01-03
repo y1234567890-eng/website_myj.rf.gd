@@ -28,7 +28,7 @@
                 else {
                     echo "<script>console.log('{$fail}' );</script>";
                 }
-                $query = $conn->query("SELECT * FROM `updates`");
+                $query = $conn->query("SELECT * FROM `updates` ORDER BY id DESC");
     
                 while ($row=$query->fetch_array(MYSQLI_ASSOC)) {
                     echo "<div class='card1'>";
@@ -44,5 +44,10 @@
                 }
             ?>
         </div>
+        <script>
+            if(window.history.replaceState) {
+                window.history.replaceState(null, null, window.location.href);
+            }
+        </script>
     </body>
 </html>
