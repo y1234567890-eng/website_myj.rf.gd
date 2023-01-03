@@ -319,6 +319,52 @@
         </div>
     </div>
 
+    <div id="updates">
+        <div id="inner-updates">
+            <h1>Latest Updates</h1>
+            <h2>Get to know the latest updates on MYJ World!</h2>
+            <?php
+                $host="sql112.epizy.com";
+                $dbuser="epiz_30389702";
+                $dbpassword="VjgiAEJdCn4";
+                $dbname="epiz_30389702_admin";
+                $conn = new mysqli($host, $dbuser, $dbpassword, $dbname);
+                $success = "Success!";
+                $fail = "Not Connected";
+                if($conn) {
+                    echo "<script>console.log('{$success}' );</script>";
+                }
+                else {
+                    echo "<script>console.log('{$fail}' );</script>";
+                }
+
+                $query = $conn->query("SELECT * FROM `updates` ORDER BY id DESC LIMIT 3");
+                while ($row=$query->fetch_array(MYSQLI_ASSOC)) {
+                    echo "<div id='single-review' class='single-review'>";
+                    echo "<div id='inner-review-review' class='review-quote-design'>";
+                    echo "<img src='update-time_nobg.png' alt='update-clipart' width='103px'>";
+                    echo "<p>".$row['details']."</p>";
+                    echo "<p> Date: ".$row['date']."</p>";
+                    echo "<div class='ellipsis'>...</div>";
+                    echo "</div>";
+                    echo "<p>".$row['title']."</p>";
+                    echo "<div class='ellipsis'>...</div>";
+                    echo "</div>";
+                }
+            ?>
+            <br>
+            <a href="updates">See all &rarr;</a>
+
+            <!-- 
+            <div id="single-review" class="single-review">
+                <div id="inner-review-review" class="review-quote-design">
+                    <p>review</p>
+                </div>
+                <p>Name</p>
+            </div> -->
+        </div>
+    </div>
+
     <div id="contact-us">
         <div id="inner-contact">
             <table>
