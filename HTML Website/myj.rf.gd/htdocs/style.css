@@ -545,7 +545,7 @@ nav .fa-bars {
     text-align: center;
     background: #6285bc;
     color: #FFFFFF;
-    height: 187px;
+    height: 227px;
     width: 80%;
     margin-left: 10%;
     margin-right: 10%;
@@ -566,7 +566,7 @@ nav .fa-bars {
 
 .single-review {
     width: 287px;
-    height: 220px;
+    height: 280px;
     padding: 5%;
     margin: auto;
     text-overflow: ellipsis;
@@ -590,6 +590,95 @@ nav .fa-bars {
     top: calc(4em + 2px - 100%);
     text-align: left;
 }
+
+.update-design {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: #6285bc;
+    color: #FFFFFF;
+    height: 187px;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.update-design h3 {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    word-break: break-all;
+    max-height: 5em;
+    position: relative;
+    margin: 10%;
+}
+
+.update-design p {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    word-break: break-all;
+    max-height: 3em;
+    position: relative;
+    margin: 10%;
+}
+
+#updates {
+    display: flex;
+    /* justify-content: left;
+    align-items: left;
+    text-align: left; */
+    width: 100%;
+    background: #ffffff;
+    /* height: 600px; */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: "Spline Sans", sans-serif;
+    height: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#updates h1 {
+    font-weight: 400;
+    margin: 0;
+    font-size: 45px;
+}
+
+#updates p {
+    /* margin: 0%; */
+    font-weight: 300;
+    font-size: 18px;
+    padding-top: 3%;
+}
+
+#updates h2 {
+    margin: 0;
+    font-weight: 400;
+    font-size: 18px;
+    padding-top: 1%;
+}
+
+#inner-updates a {
+    margin-top: 20px;
+    color: #f47300;
+    font-size: 1.3em;
+}
+
+#inner-updates {
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+#inner-updates a:hover {
+    text-decoration: underline;
+}
+
 
 #contact-us {
     background: rgb(233, 233, 233);

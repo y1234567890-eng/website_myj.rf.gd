@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="../../../../MYJ_icon_updated.png" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
+    <script src="https://kit.fontawesome.com/90301f7072.js" crossorigin="anonymous"></script>
+    <title>MYJ Calculator</title>
+    <meta name="viewport" content="width=device-width">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400&display=swap');
+        body {
+            margin: 0;
+            font-family: "Spline Sans", sans-serif;
+        }
+
+        #counter p {
+            font-size: 8em;
+        }
+
+        #target p {
+            font-size: 1em;
+        }
+        
+        button {
+            background-color: #04AA6D;
+            border: none;
+            color: #FFFFFF;
+            padding: 16px 32px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition-duration: 0.4s;
+            border: 2px solid #4CAF50;
+        }
+        
+        button:hover {
+            background-color: #ffffff;
+            color: #000000;
+            border: 2px solid #4CAF50;
+            transform: scale(1.1);
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        a:focus {
+            color: #ff0000;
+        }
+        
+        #intro {
+            display: flex;
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 1)), url(../bg2.png);
+            background-size: cover;
+            height: 110vh;
+            color: #FFFFFF;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        #inner-intro {
+            padding-top: 60px;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        #back-mobile {
+            /* display: none; */
+            margin: 10px;
+            position: fixed;
+        }
+        
+        #back-mobile button:hover {
+            transform: scale(1.1);
+            background: #ffffff;
+            color: #000000;
+            border: 2px solid #4CAF50;
+        }
+        
+        #back-mobile button {
+            background-color: #04AA6D;
+            border: none;
+            color: #FFFFFF;
+            padding: 10px 10px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition-duration: 0.4s;
+            border: 2px solid #4CAF50;
+        }
+
+        #back-mobile button:focus {
+            background-color: #ffffff;
+            color: #000000;
+            border: 2px dashed #4CAF50;
+        }
+        
+        #mobile {
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            display: none;
+        }
+        
+        #inner-mobile {
+            margin: auto;
+        }
+
+        .reset-btn {
+            background: #72bafe;
+            border: 2px solid #309bff;
+        }
+
+        .reset-btn:hover {
+            border: 2px solid #309bff;
+        }
+
+        #target2 input[type=submit] {
+            background-color: #04AA6D;
+            border: none;
+            color: #FFFFFF;
+            padding: 16px 32px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition-duration: 0.4s;
+            border: 2px solid #4CAF50;
+        }
+        
+        #target2 input[type=submit]:hover {
+            background-color: #ffffff;
+            color: #000000;
+            border: 2px solid #4CAF50;
+        }
+        
+        #target2 input[type=number] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 2px 0;
+            box-sizing: border-box;
+            border: 3px solid #ccc;
+            -webkit-transition: 0.5s;
+            transition: 0.5s;
+            outline: none;
+            border-radius: 8px;
+        }
+        
+        #target2 input[type=number]:focus {
+            border: 3px solid #4CAF50;
+        }
+        
+        @media only screen and (hover: none) and (pointer: coarse) {
+            #mobile {
+                display: block;
+            }
+            #counter {
+                display: none;
+            }
+		#target2 {
+		    display: none;
+		}
+        }
+    </style>
+</head>
+
+<body>
+    <div id="back-mobile">
+        <a href="https://myj.rf.gd/services/android-apps/tally-counter"><button>&#x25c0; Back</button></a>
+    </div>
+
+    <div id="intro">
+        <div id="inner-intro">
+            <img src="../../../../play-store/tally.png" alt="Tally Counter Logo" style="border-radius: 8px;" width="100px">
+            <h1>MYJ Tally Counter</h1>
+            <!-- <h2>Bringing MYJ Android Apps Into The Online World</h2>
+            <h3 style="padding-top: 20px;">Categories</h3>
+            <button style="background: rgb(255, 230, 0); color: rgb(255, 145, 0); margin-top: 5px;border: none; border-radius: 8px; padding: 5px 5px; height: auto;">Calculator</button><button style="background: rgb(0, 255, 64); color: rgb(81, 143, 0); border: none; border-radius: 8px; padding: 5px 5px; height: auto;">Android-App</button> -->
+            <div id="counter">
+                <p id="currentcount">0</p>
+                <div id="target">
+                    <p id="targettxt">Target: 10</p>
+                </div>
+                <button class="reset-btn" onclick="reset()"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+                <br>
+                <button onclick="add()"><i class="fa-solid fa-plus"></i></button>
+                <button onclick="sub()"><i class="fa fa-minus" aria-hidden="true"></i></button>
+            </div>
+            <div id="target2">
+                <form>
+                    <input id="numtarget" type="number" placeholder="Change Target..."/>
+                    <input type="submit" placeholder="Set" onclick="settarget()"/>
+                </form>
+            </div>
+            <div id="mobile">
+                <div id="inner-mobile">
+                    <h3>This app is not available online on mobile.</h3>
+                    <h3>Get this app using Google Play</h3>
+                    <a href="https://play.google.com/store/apps/details?id=com.yousufjamil.myjtallycounter" target="_blank" rel="noopener noreferrer"><img src="../../play.png" alt="Get it on Google Play" width="150px"></a>
+                    <p>Still want to try the browser version? It may not work perfectly. <a onclick="openWeb()">Click here</a> to load the page online.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var current = 0
+        var target = 10
+        var display = document.getElementById('currentcount');
+        var displaytarget = document.getElementById('targettxt');
+
+        function add() {
+            current=current+1
+            display.innerHTML = current;
+            if (current>=target) {
+                display.style.color = "#008d02";
+            } else {
+                display.style.color = "#FFFFFF";
+            }
+        }
+
+        function sub() {
+            current=current-1
+            display.innerHTML = current;
+            if (current>=target) {
+                display.style.color = "#008d02";
+            } else {
+                display.style.color = "#FFFFFF";
+            }
+        }
+
+        function reset() {
+            current=0
+            display.innerHTML = current;
+            target=10
+            displaytarget.innerHTML = "Target: "+target;
+            if (current>=target) {
+                display.style.color = "#008d02";
+            } else {
+                display.style.color = "#FFFFFF";
+            }
+        }
+        function settarget() {
+            event.preventDefault();
+            target=document.getElementById('numtarget').value;
+            displaytarget.innerHTML = "Target: "+target;
+            if (current>=target) {
+                display.style.color = "#008d02";
+            } else {
+                display.style.color = "#FFFFFF";
+            }
+        }
+    </script>
+
+    <script type="text/javascript">
+        function openWeb() {
+            document.getElementById('mobile').style.display = 'none';
+            document.getElementById('counter').style.display = 'block';
+            document.getElementById('target2').style.display = 'block';
+        }
+    </script>
+
+    <script type='text/javascript'>
+        (function(I, L, T, i, c, k, s) {
+            if (I.iticks) return;
+            I.iticks = {
+                host: c,
+                settings: s,
+                clientId: k,
+                cdn: L,
+                queue: []
+            };
+            var h = T.head || T.documentElement;
+            var e = T.createElement(i);
+            var l = I.location;
+            e.async = true;
+            e.src = (L || c) + '/client/inject-v2.min.js';
+            h.insertBefore(e, h.firstChild);
+            I.iticks.call = function(a, b) {
+                I.iticks.queue.push([a, b]);
+            };
+        })(window, 'https://cdn-v1.intelliticks.com/prod/common', document, 'script', 'https://app.intelliticks.com', '24dSCuYprvQfPp73d_c', {});
+    </script>
+</body>
+</body>
+
+</html>
