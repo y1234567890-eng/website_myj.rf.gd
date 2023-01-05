@@ -113,7 +113,7 @@
             border: 3px solid #555;
         }
 
-        input[type=password] {
+        input[type=date] {
             width: 100%;
             padding: 12px 20px;
             margin: 2px 0;
@@ -124,7 +124,7 @@
             outline: none;
         }
 
-        input[type=password]:focus {
+        input[type=date]:focus {
             border: 3px solid #555;
         }
 
@@ -151,18 +151,12 @@
     </head>
     <body>
         <div id="back-mobile">
-            <a href="https://myj.rf.gd"><button>&#x25c0; Back to Home</button></a>
+            <a href="https://myj.rf.gd/admin"><button>&#x25c0; Back</button></a>
         </div>
         
         <h1>Admin Login</h1>
-        <div id="log-in-form">
-            <form method="POST">
-                <input type="text" name="username" placeholder="Username" required><br>
-                <input type="password" name="password" placeholder="Password" required><br>
-                <input type="submit" name="submit" value="Submit">
-            </form>
-        </div>
         <div>
+        <p>Your username is: <?php echo $_POST["username"]; $username = $_POST["username"];?></p>
         <?php
             $host="sql112.epizy.com";
             $dbuser="epiz_30389702";
@@ -179,37 +173,45 @@
                 echo "<script>console.log('{$fail}' );</script>";
             }
 
-            if(isset($_POST['submit'])) {
-                $username=$conn->real_escape_string($_POST['username']);
-                $password=$conn->real_escape_string($_POST['password']);
-
-
-                $query = $conn->query("SELECT * FROM adminaccounts");
-                
-                while ($row=$query->fetch_array(MYSQLI_ASSOC)) {
-                    if ($username==$row['username']) {
-                        if ($password == $row['password']) {
-                            $correct = "true";
-                            echo "<div id='logged-in'>";
-                            echo "<div id='new-feature' class='default-box'>";
-                            echo "<h2>Add Update</h2>";
-                            echo "<div id='add-update' class='default-btn'>";
-                            echo "<form method='post' action='new-feedback/index.php'>";
-                            echo "<input type='hidden' name='username' value='".$username."'/>";
-                            echo "<input type='submit' value='New update'/>";
-                            echo "</form>";
-                            // echo "<a href='new-feedback'><button>New Update</button></a>";
-                            echo "</div></div></div>";
-                            echo "<script>document.getElementById('log-in-form').style.display = 'none';</script>";
-                        } else {
-                            $correct="false";
-                            echo "Password does not match with the username";
-                        }
+            $query = $conn->query("SELECT * FROM adminaccounts");
+            
+            while ($row=$query->fetch_array(MYSQLI_ASSOC)) {
+                if ($username==$row['username']) {
+                    $correct = "true";
+                    echo "<form method='POST'>";
+                    echo "<input type='hidden' name='username' value='".$username."'/>";
+                    echo "<input type='text' name='title' placeholder='Title'/>";
+                    echo "<input type='text' name='details' placeholder='Details'/>";
+                    echo "<input type='date' name='date' placeholder='Date'/>";
+                    echo "<input type='submit' name='submit' value='Post'/>";
+                    echo "</form>";
                     } else {
-                        $correct="false";
-                        echo "<p>Username does not exist</p>";
-                    }
+                    $correct="false";
+                    echo "<p>Error</p>";
                 }
+            }
+        ?>
+
+        <?php 
+            if(isset($_POST['submit'])) {
+                $host="sql112.epizy.com";
+                $dbuser="epiz_30389702";
+                $dbpassword="VjgiAEJdCn4";
+                $dbname="epiz_30389702_admin";
+                $conn = new mysqli($host, $dbuser, $dbpassword, $dbname);
+                $success = "Success!";
+                $fail = "Not Connected";
+                if($conn) {
+                    echo "<script>console.log('{$success}' );</script>";
+                }
+                else {
+                    echo "<script>console.log('{$fail}' );</script>";
+                }
+                $title=$conn->real_escape_string($_POST['title']);
+                $details=$conn->real_escape_string($_POST['details']);
+                $date=$conn->real_escape_string($_POST['date']);
+                $conn->query("INSERT INTO updates (title, details, date) VALUES ('$title','$details','$date')");
+                echo "<br><p>Posted</p>";
             }
         ?>
         </div>
