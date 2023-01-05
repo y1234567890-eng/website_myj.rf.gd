@@ -195,7 +195,7 @@
                             echo "<div id='add-update' class='default-btn'>";
                             echo "<a href='new'><button>New Update</button></a>";
                             echo "</div></div></div>";
-                            echo "<script>document.getElementById('log-in-form').style.display = none;</script>"
+                            echo "<script>document.getElementById('log-in-form').style.display = none;</script>";
                         } else {
                             $correct="false";
                             echo "Password does not match with the username";                        }
