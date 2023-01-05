@@ -161,6 +161,7 @@
                 <input type="password" name="password" placeholder="Password" required><br>
                 <input type="submit" name="submit" value="Submit">
             </form>
+        </div>
         <div>
         <?php
             $host="sql112.epizy.com";
@@ -195,10 +196,11 @@
                             echo "<div id='add-update' class='default-btn'>";
                             echo "<a href='new'><button>New Update</button></a>";
                             echo "</div></div></div>";
-                            echo "<script>document.getElementById('log-in-form').style.display = none;</script>";
+                            echo "<script>document.getElementById('log-in-form').style.display = 'none';</script>";
                         } else {
                             $correct="false";
-                            echo "Password does not match with the username";                        }
+                            echo "Password does not match with the username";
+                        }
                     } else {
                         $correct="false";
                         echo "<p>Username does not exist</p>";
@@ -206,6 +208,7 @@
                 }
             }
         ?>
+        </div>
         <script>
             if(window.history.replaceState) {
                 window.history.replaceState(null, null, window.location.href);
