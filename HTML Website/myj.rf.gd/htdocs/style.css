@@ -959,11 +959,11 @@ input[type=reset]:hover {
     padding-right: 2%;
 }
 
-@media only screen and (max-width: 450px) {
+/* @media only screen and (max-width: 450px) {
     .single-review {
         height: 230px;
     }
-}
+} */
 
 @media only screen and (max-width: 940px) {
     #advantages-image {

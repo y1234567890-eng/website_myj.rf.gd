@@ -150,9 +150,9 @@
     <div id="intro">
         <div id="inner-intro">
             <img src="../logo.png" style="border-radius: 8px;" alt="Binary To Decimal Converter Logo" />
-            <h1>MYJ Binary to Decimal Converter With 2&#8217;s complement</h1>
+            <h1>MYJ Decimal to Binary Converter</h1>
             <form>
-                <input id="binary-input" name="binary-input" type="number" placeholder="Enter binary number" required/>
+                <input id="denary-input" name="denary-input" type="number" placeholder="Enter denary number" required/>
                 <input name="process" type="submit" value="Submit" onclick="convertInput()" />
             </form>
             <p id="display-result">The result is:</p>
@@ -163,75 +163,89 @@
 
         function convertInput() {
             event.preventDefault();
-            input = document.getElementById('binary-input').value;
+            input = document.getElementById('denary-input').value;
             if (input == "") {
-                alert("Please enter a binary number");
+                alert("Please enter a denary number");
             } else {
                 var display = document.getElementById('display-result');
-                var updatedinput = "";
-                var inputarray = [];
-                var reverseinputarray = [];
-                num = 0;
-                var currentprocessing = 0;
-                var finalnum = 0;
+                var num = 2;
+                var outputarray = [];
                 var output = 0;
-                var arraylength = 0;
-                var power = 0;
-                var valid = false;
-                // console.log("Input is: " + input)
-                updatedinput = input.split("");
-                // console.log("Input with commas: " + updatedinput);
-                try {
-                    inputarray = JSON.parse("[" + updatedinput + "]");
-                    // console.log("Input as array: " + inputarray);
-                    // console.log("State is: " + inputarray.every(checkinput));
-                    valid = true;
-                } catch (e) {
-                    valid = false;
-                }
-                if (valid == true) {
-                    if (inputarray.every(checkinput) == false) {
-                        alert("Please ensure all digits in input are 0 and 1 only");
-                    } else {
-                        reverseinputarray = inputarray.reverse();
-                        // console.log("Input reverse array: " + reverseinputarray);
-                        // reverseinputarray.splice(0, 0, "0");
-                        console.log("Input reverse array with count 0: " + reverseinputarray);
-                        arraylength = reverseinputarray.length;
-                        // console.log("Array length: " + arraylength);
-                        for (var i = 0; i < (parseInt(arraylength)) - 1;) {
-                            // console.log("i is: " + i);
-                            num = Math.pow(2, power);
-                            // console.log("Power: " + num);
-                            // currentprocessing = reverseinputarray.indexOf(i);
-                            currentprocessing = reverseinputarray.find(checknum);
-                            // console.log("Currently processing: " + currentprocessing);
-                            finalnum = currentprocessing * num;
-                            // console.log("Final number: " + finalnum);
-                            output = output + finalnum;
-                            // console.log("Current output: " + output);
-                            reverseinputarray.splice(0, 1);
-                            arraylength--
-                            // console.log("Current array: " + reverseinputarray);
-                            power = power + 1
+                var currentprocessing = 0;
+                var inputremain = input;
+                var reverseoutput = [];
+                var length = input.length
+                if (input >= 0) {
+                    for (var i = 0; i < inputremain;) {
+                        currentprocessing = inputremain % 2;
+                        inputremain = inputremain/2;
+                        if (inputremain != Math.round(inputremain)) {
+                            inputremain = inputremain - 0.5;
                         }
-
-                        num = Math.pow(2, power);
-                        num = num * -1
-                        console.log("Power: " + num);
-                        currentprocessing = reverseinputarray.find(checknum);
-                        finalnum = currentprocessing * num;
-                        output = output + finalnum;
-                        reverseinputarray.splice(0, 1);
-                        arraylength--
-                        power = power + 1
-
-                        display.style.display = 'block';
-                        display.innerHTML = "The result is: " + output;
+                        outputarray.push(currentprocessing);
                     }
+                    reverseoutput = outputarray.reverse();
+                    output = outputarray.join("");
+                } else if (input < 0) {
+                    for (var i = 0; i > inputremain;) {
+                        currentprocessing = inputremain % 2;
+                        inputremain = inputremain/2;
+                        if (inputremain != Math.round(inputremain)) {
+                            inputremain = inputremain + 0.5;
+                        }
+                        outputarray.push(currentprocessing);
+                    }
+                    reverseoutput = outputarray.reverse();
+                    output = outputarray.join("");
+                    output = output.replace(/-/g, "");
+                    output = "-" + output;
                 } else {
-                    alert("Please ensure all digits in input are 0 and 1 only");
+                    alert("Unknown error");
                 }
+                display.style.display = 'block';
+                display.innerHTML = "The result is: " + output;
+                // var updatedinput = "";
+                // var inputarray = [];
+                // var reverseinputarray = [];
+                // num = 0;
+                // var currentprocessing = 0;
+                // var finalnum = 0;
+                // var output = 0;
+                // var arraylength = 0;
+                // var power = 0;
+                // var valid = false;
+                // updatedinput = input.split("");
+                // try {
+                //     inputarray = JSON.parse("[" + updatedinput + "]");
+                //     valid = true;
+                // } catch (e) {
+                //     valid = false;
+                // }
+                // if (valid == true) {
+                    // if (inputarray.every(checkinput) == false) {
+                    //     alert("Please ensure all digits in input are 0 and 1 only");
+                    // } else {
+                        // reverseinputarray = inputarray.reverse();
+                        // // reverseinputarray.splice(0, 0, "0");
+                        // arraylength = reverseinputarray.length;
+                        // for (var i = 0; i < parseInt(arraylength);) {
+                            // num = Math.pow(2, power);
+                            // num = 2;
+                            // console.log("Power: " + num);
+                        //     currentprocessing = reverseinputarray.find(checknum);
+                        //     finalnum = currentprocessing * num;
+                        //     output = output + finalnum;
+                        //     reverseinputarray.splice(0, 1);
+                        //     arraylength--
+                        //     power = power + 1
+                        // }
+                        // output = output / 2;
+                        // display.style.display = 'block';
+                        // display.innerHTML = "The result is: " + output;
+                    // }
+                // } else {
+                //     alert("Please ensure all digits in input are 0 and 1 only");
+                // }
             }
         }
 
@@ -239,17 +253,17 @@
             return number >= 0;
         }
 
-        function checkinput(inputnum) {
-            var inputnumstate = false;
-            if (inputnum == 1) {
-                inputnumstate = true;
-            } else if (inputnum == 0) {
-                inputnumstate = true;
-            } else {
-                inputnumstate = false;
-            }
-            return inputnumstate;
-        }
+        // function checkinput(inputnum) {
+        //     var inputnumstate = false;
+        //     if (inputnum == 1) {
+        //         inputnumstate = true;
+        //     } else if (inputnum == 0) {
+        //         inputnumstate = true;
+        //     } else {
+        //         inputnumstate = false;
+        //     }
+        //     return inputnumstate;
+        // }
     </script>
     <script type='text/javascript'>
         (function(I, L, T, i, c, k, s) {
