@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Binary to Decimal Converter</title>
+    <link rel="icon" href="../../../../MYJ_icon_updated.png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400&display=swap');
+        body {
+            margin: 0;
+            font-family: "Spline Sans", sans-serif;
+            /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgb(255, 255, 255)), url(bg3.jpeg) no-repeat fixed center;
+            background-size: 100%;
+            background-repeat: no-repeat; */
+        }
+        
+        button {
+            background-color: #04AA6D;
+            border: none;
+            color: #FFFFFF;
+            padding: 16px 32px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition-duration: 0.4s;
+            border: 2px solid #4CAF50;
+        }
+        
+        button:hover {
+            background-color: #ffffff;
+            color: #000000;
+            border: 2px solid #4CAF50;
+            transform: scale(1.1);
+        }
+        
+        button:focus {
+            background-color: #ffffff;
+            color: #000000;
+            border: 2px dashed #4CAF50;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        a:focus {
+            color: #ff0000;
+        }
+        
+        #intro {
+            display: flex;
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 1)), url(../bg2.jpg);
+            background-size: cover;
+            height: 100vh;
+            color: #FFFFFF;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        #inner-intro {
+            padding-top: 60px;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        #back-mobile {
+            /* display: none; */
+            margin: 10px;
+            position: fixed;
+        }
+        
+        #back-mobile button:hover {
+            transform: scale(1.1);
+            background: #ffffff;
+            color: #000000;
+            border: 2px solid #4CAF50;
+        }
+        
+        #back-mobile button {
+            background-color: #04AA6D;
+            border: none;
+            color: #FFFFFF;
+            padding: 10px 10px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition-duration: 0.4s;
+            border: 2px solid #4CAF50;
+        }
+        
+        p {
+            display: none;
+        }
+        
+        input[type=submit] {
+            background-color: #04AA6D;
+            border: none;
+            color: #FFFFFF;
+            padding: 16px 32px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition-duration: 0.4s;
+            border: 2px solid #4CAF50;
+        }
+        
+        input[type=submit]:hover {
+            background-color: #ffffff;
+            color: #000000;
+            border: 2px solid #4CAF50;
+        }
+        
+        input[type=number] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 2px 0;
+            box-sizing: border-box;
+            border: 3px solid #ccc;
+            -webkit-transition: 0.5s;
+            transition: 0.5s;
+            outline: none;
+            border-radius: 8px;
+        }
+        
+        input[type=number]:focus {
+            border: 3px solid #4CAF50;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="back-mobile">
+        <a href="https://myj.rf.gd/services/online/converters/"><button>&#x25c0; Back</button></a>
+    </div>
+
+
+    <div id="intro">
+        <div id="inner-intro">
+            <img src="../logo.png" style="border-radius: 8px;" alt="Binary To Decimal Converter Logo" />
+            <h1>MYJ Binary to Decimal Converter With 2&#8217;s complement</h1>
+            <form>
+                <input id="binary-input" name="binary-input" type="number" placeholder="Enter binary number" required/>
+                <input name="process" type="submit" value="Submit" onclick="convertInput()" />
+            </form>
+            <p id="display-result">The result is:</p>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var num = 0;
+
+        function convertInput() {
+            event.preventDefault();
+            input = document.getElementById('binary-input').value;
+            if (input == "") {
+                alert("Please enter a binary number");
+            } else {
+                var display = document.getElementById('display-result');
+                var updatedinput = "";
+                var inputarray = [];
+                var reverseinputarray = [];
+                num = 0;
+                var currentprocessing = 0;
+                var finalnum = 0;
+                var output = 0;
+                var arraylength = 0;
+                var power = 0;
+                var valid = false;
+                // console.log("Input is: " + input)
+                updatedinput = input.split("");
+                // console.log("Input with commas: " + updatedinput);
+                try {
+                    inputarray = JSON.parse("[" + updatedinput + "]");
+                    // console.log("Input as array: " + inputarray);
+                    // console.log("State is: " + inputarray.every(checkinput));
+                    valid = true;
+                } catch (e) {
+                    valid = false;
+                }
+                if (valid == true) {
+                    if (inputarray.every(checkinput) == false) {
+                        alert("Please ensure all digits in input are 0 and 1 only");
+                    } else {
+                        reverseinputarray = inputarray.reverse();
+                        // console.log("Input reverse array: " + reverseinputarray);
+                        // reverseinputarray.splice(0, 0, "0");
+                        console.log("Input reverse array with count 0: " + reverseinputarray);
+                        arraylength = reverseinputarray.length;
+                        // console.log("Array length: " + arraylength);
+                        for (var i = 0; i < (parseInt(arraylength)) - 1;) {
+                            // console.log("i is: " + i);
+                            num = Math.pow(2, power);
+                            // console.log("Power: " + num);
+                            // currentprocessing = reverseinputarray.indexOf(i);
+                            currentprocessing = reverseinputarray.find(checknum);
+                            // console.log("Currently processing: " + currentprocessing);
+                            finalnum = currentprocessing * num;
+                            // console.log("Final number: " + finalnum);
+                            output = output + finalnum;
+                            // console.log("Current output: " + output);
+                            reverseinputarray.splice(0, 1);
+                            arraylength--
+                            // console.log("Current array: " + reverseinputarray);
+                            power = power + 1
+                        }
+
+                        num = Math.pow(2, power);
+                        num = num * -1
+                        console.log("Power: " + num);
+                        currentprocessing = reverseinputarray.find(checknum);
+                        finalnum = currentprocessing * num;
+                        output = output + finalnum;
+                        reverseinputarray.splice(0, 1);
+                        arraylength--
+                        power = power + 1
+
+                        display.style.display = 'block';
+                        display.innerHTML = "The result is: " + output;
+                    }
+                } else {
+                    alert("Please ensure all digits in input are 0 and 1 only");
+                }
+            }
+        }
+
+        function checknum(number) {
+            return number >= 0;
+        }
+
+        function checkinput(inputnum) {
+            var inputnumstate = false;
+            if (inputnum == 1) {
+                inputnumstate = true;
+            } else if (inputnum == 0) {
+                inputnumstate = true;
+            } else {
+                inputnumstate = false;
+            }
+            return inputnumstate;
+        }
+    </script>
+    <script type='text/javascript'>
+        (function(I, L, T, i, c, k, s) {
+            if (I.iticks) return;
+            I.iticks = {
+                host: c,
+                settings: s,
+                clientId: k,
+                cdn: L,
+                queue: []
+            };
+            var h = T.head || T.documentElement;
+            var e = T.createElement(i);
+            var l = I.location;
+            e.async = true;
+            e.src = (L || c) + '/client/inject-v2.min.js';
+            h.insertBefore(e, h.firstChild);
+            I.iticks.call = function(a, b) {
+                I.iticks.queue.push([a, b]);
+            };
+        })(window, 'https://cdn-v1.intelliticks.com/prod/common', document, 'script', 'https://app.intelliticks.com', '24dSCuYprvQfPp73d_c', {});
+    </script>
+</body>
+
+</html>
