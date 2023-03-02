@@ -3,6 +3,7 @@
         <title>Updates - MYJ World</title>
         <link rel="icon" href="../MYJ_icon_updated.png"/>
         <link rel="stylesheet" href="style.css"/>
+        <meta name="viewport" content="width=device-width">
     </head>
     <body>
         <div id="back-mobile">
