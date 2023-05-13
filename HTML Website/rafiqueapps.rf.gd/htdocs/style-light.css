@@ -235,7 +235,7 @@ nav .fa-bars {
     font-family: "Spline Sans", sans-serif;
     padding: 50px 20px;
     background: #eeeeee;
-    height: 90%;
+    height: 95%;
 }
 
 .description img {
@@ -340,7 +340,7 @@ nav .fa-bars {
         margin: 30px 25%;
     }
     .description {
-        height: 1200px;
+        height: 1800px;
     }
 }
 
