@@ -6,8 +6,10 @@
     $conn = new mysqli($host, $dbuser, $dbpassword, $dbname);
 
     $id = $_POST["id"];
-    $query = $conn->query("SELECT * FROM form WHERE id LIKE ".$id);
+    $query = $conn->query("SELECT * FROM form");
     while ($row=$query->fetch_array(MYSQLI_ASSOC)) {
-        echo "Message: ".$row["message"];
+        if ($row["id"]==$id) {
+            echo "Message: ".$row["message"];
+        }
     }
 ?>
