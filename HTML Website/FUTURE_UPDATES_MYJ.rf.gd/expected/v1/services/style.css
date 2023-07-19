@@ -93,6 +93,11 @@ body {
   align-items: center;
 }
 
+a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
 nav {
   position: fixed;
   width: 100%;

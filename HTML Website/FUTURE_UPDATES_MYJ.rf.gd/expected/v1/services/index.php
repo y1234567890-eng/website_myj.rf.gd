@@ -82,27 +82,77 @@
     </form>
   </div>
 
-  <div class="item">
-    <div class="item-left">
-      <img src="../Assets/logo.png" alt="Logo" />
-      <h2>Lorem ipsum</h2>
-      <p>Price: Free</p>
-      <button><a>Try service <i class="fas fa-arrow-right"></i></a></button>
-    </div>
-    <div class="item-right">
-      <h2>Lorem ipsum</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua.</p>
-    </div>
-    <div class="item-mobile">
-      <img src="../Assets/logo.png" alt="Logo" />
-      <h2>Lorem ipsum</h2>
-      <p>Price: Free</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua.</p>
-      <button><a>Try service <i class="fas fa-arrow-right"></i></a></button>
-    </div>
-  </div>
+  <?php
+    $query = $conn->query("SELECT * FROM `services`");
+    while ($row=$query->fetch_array(MYSQLI_ASSOC)) {
+      echo "<div class='item'>";
+      echo "<div class='item-left'>";
+      echo "<img src='".$row['logo']."' alt='Logo' />";
+      echo "<h2>".$row['name']."</h2>";
+      echo "<p>Price: ".$row['price']."</p>";
+      echo "<p>Category: ".$row['category']."</p>";
+      echo "<button><a href='".$row['url']."'>Try service <i class='fas fa-arrow-right'></i></a></button>";
+      echo "</div>";
+      echo "<div class='item-right'>";
+      echo "<h2>".$row['name']."</h2>";
+      echo "<p>".$row['description']."</p>";
+      echo "</div>";
+      echo "<div class='item-mobile'>";
+      echo "<img src='".$row['logo']."' alt='Logo' />";
+      echo "<h2>".$row['name']."</h2>";
+      echo "<p>Price: ".$row['price']."</p>";
+      echo "<p>".$row['description']."</p>";
+      echo "<button><a href='".$row['url']."'>Try service <i class='fas fa-arrow-right'></i></a></button>";
+      echo "</div>";
+      echo "</div>";
+    }
+
+    $query = $conn->query("SELECT * FROM `play-store`");
+    while ($row=$query->fetch_array(MYSQLI_ASSOC)) {
+      echo "<div class='item'>";
+      echo "<div class='item-left'>";
+      echo "<img src='".$row['logo']."' alt='Logo' />";
+      echo "<h2>".$row['name2']."</h2>";
+      echo "<p>Price: ".$row['price']."</p>";
+      echo "<p>Category: Play Store</p>";
+      echo "<button><a href='".$row['url']."'>Try service <i class='fas fa-arrow-right'></i></a></button>";
+      echo "</div>";
+      echo "<div class='item-right'>";
+      echo "<h2>".$row['name2']."</h2>";
+      echo "<p>".$row['description']."</p>";
+      echo "</div>";
+      echo "<div class='item-mobile'>";
+      echo "<img src='".$row['logo']."' alt='Logo' />";
+      echo "<h2>".$row['name']."</h2>";
+      echo "<p>Price: ".$row['price']."</p>";
+      echo "<p>".$row['description']."</p>";
+      echo "<button><a href='".$row['url']."'>Try service <i class='fas fa-arrow-right'></i></a></button>";
+      echo "</div>";
+      echo "</div>";
+    }
+
+    $query = $conn->query("SELECT * FROM `scratch`");
+    while ($row=$query->fetch_array(MYSQLI_ASSOC)) {
+      echo "<div class='item'>";
+      echo "<div class='item-left'>";
+      echo "<img src='https://myj.rf.gd/scratch/scratch.png' alt='Logo' />";
+      echo "<h2>".$row['name']."</h2>";
+      echo "<p>Category: Scratch</p>";
+      echo "<button><a href='".$row['url']."'>Try service <i class='fas fa-arrow-right'></i></a></button>";
+      echo "</div>";
+      echo "<div class='item-right'>";
+      echo "<h2>".$row['name']."</h2>";
+      echo "<p>".$row['description']."</p>";
+      echo "</div>";
+      echo "<div class='item-mobile'>";
+      echo "<img src='https://myj.rf.gd/scratch/scratch.png' alt='Logo' />";
+      echo "<h2>".$row['name']."</h2>";
+      echo "<p>".$row['description']."</p>";
+      echo "<button><a href='".$row['url']."'>Try service <i class='fas fa-arrow-right'></i></a></button>";
+      echo "</div>";
+      echo "</div>";
+    }
+  ?>
 
   <div id="footer" class="footer">
     <div id="footer-flex" class="center-elements">
