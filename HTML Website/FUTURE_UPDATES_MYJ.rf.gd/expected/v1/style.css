@@ -223,7 +223,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Assets/final.gif) no-repeat fixed center;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://myj-worldv2.myousufjamil.repl.co/Assets/final.gif) no-repeat fixed center;
   background-size: cover;
 }
 
@@ -450,18 +450,22 @@ nav {
 
   .pink-theme {
     transform: rotate(0deg);
+    margin-top: 20px;
   }
 
   .blue-theme {
     transform: rotate(0deg);
+    margin-top: 20px;
   }
 
   .green-theme {
     transform: rotate(0deg);
+    margin-top: 20px;
   }
 
   .yellow-theme {
     transform: rotate(0deg);
+    margin-top: 20px;
   }
 
   .inner-section {

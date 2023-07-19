@@ -224,7 +224,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../Assets/final.gif) no-repeat fixed center;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://myj-worldv2.myousufjamil.repl.co/Assets/final.gif) no-repeat fixed center;
   background-size: cover;
 }
 

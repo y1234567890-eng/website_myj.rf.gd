@@ -14,7 +14,7 @@
   <nav>
     <div id="inner-nav">
       <div id="logo">
-        <a href="https://myj-worldv2.myousufjamil.repl.co/"><img src="../Assets/logo.png" width="90px" alt="logo"></a>
+        <a href="https://myj.rf.gd/expected/v1/"><img src="../Assets/logo.png" width="90px" alt="logo"></a>
       </div>
       <div id="nav-btns">
       <?php

@@ -14,7 +14,7 @@
   <nav>
     <div id="inner-nav">
       <div id="logo">
-        <a href="https://myj-worldv2.myousufjamil.repl.co/"><img src="../../Assets/logo.png" width="90px"
+        <a href="https://myj.rf.gd/expected/v1/"><img src="../../Assets/logo.png" width="90px"
             alt="logo"></a>
       </div>
       <div id="nav-btns">
@@ -73,39 +73,6 @@
   </div>
 
   <div class="space"></div>
-<!-- 
-  <div class="single-message center-elements center-text">
-    <div class="user-content center-elements center-text">
-      <div class="profile">
-        <i class="fa fa-user"></i>
-      </div>
-      <div class="content">
-        <h3>Odio Euismod</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua.</p>
-      </div>
-    </div>
-    <div class="admin-content center-elements center-text">
-      <div class="admin-profile">
-        <img src="../../Assets/logo_no_bg.png" alt="MYJ Logo" />
-      </div>
-      <div class="admin-content-text">
-        <h3>Admin reply</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua.</p>
-      </div>
-    </div>
-    <div class="mobile-feedback">
-      <div class="content">
-        <h3>Odio Euismod</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua.</p>
-        <h3>Admin reply</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua.</p>
-      </div>
-    </div>
-  </div> -->
 
   <?php
           $host="sql112.epizy.com";
@@ -120,7 +87,7 @@
               echo "<script>console.log('Not Connected!');</script>";
           }
 
-          $query = $conn->query("SELECT * FROM `feedback`");
+          $query = $conn->query("SELECT * FROM `feedback`ORDER BY id DESC");
           while ($row=$query->fetch_array(MYSQLI_ASSOC)) {
             echo "<div class='single-message center-elements center-text'>";
             echo "<div class='user-content center-elements center-text'>";

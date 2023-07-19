@@ -15,7 +15,7 @@
   <nav>
     <div id="inner-nav">
       <div id="logo">
-        <a href="https://myj.rf.gd/expected/v1"><img src="Assets/logo.png" width="90px" alt="logo"></a>
+        <a href="https://myj.rf.gd/expected/v1/"><img src="Assets/logo.png" width="90px" alt="logo"></a>
       </div>
       <div id="nav-btns">
         <?php
@@ -34,9 +34,9 @@
           $query = $conn->query("SELECT * FROM `navbar`");
           while ($row=$query->fetch_array(MYSQLI_ASSOC)) {
             if ($row['name'] == "Home") {
-              echo "<a id='home' href='".$row{'link'}."' style='color: #a6f2ff;'>".$row['name']."</a>";
+              echo "<a id='home' href='".$row['link']."' style='color: #a6f2ff;'>".$row['name']."</a>";
             } else {
-              echo "<a href='".$row{'link'}."'>".$row['name']."</a>";
+              echo "<a href='".$row['link']."'>".$row['name']."</a>";
             }
           }
           ?>
@@ -52,9 +52,9 @@
         $query = $conn->query("SELECT * FROM `navbar`");
         while ($row=$query->fetch_array(MYSQLI_ASSOC)) {
           if ($row['name'] == "Home") {
-            echo "<button><a id='home' href='".$row{'link'}."' style='color: #a6f2ff;'>".$row['name']."</a></button>";
+            echo "<button><a id='home' href='".$row['link']."' style='color: #a6f2ff;'>".$row['name']."</a></button>";
           } else {
-            echo "<button><a href='".$row{'link'}."'>".$row['name']."</a></button>";
+            echo "<button><a href='".$row['link']."'>".$row['name']."</a></button>";
           }
         }
       ?>
@@ -111,33 +111,41 @@
     </div>
   </div>
 
-  <div id="featured-1" class="section-1">
-    <div class="inner-section center-elements">
-      <div class="text center-elements">
-        <h3>Ultricies integer</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua.</p>
-        <a href="#"><button>Try Service <i class="fas fa-arrow-right"></i></button></a>
-      </div>
-      <div class="image center-elements">
-        <img src="Assets/featured-1.png" alt="Featured" />
-      </div>
-    </div>
-  </div>
-
-  <div id="featured-2" class="section-2">
-    <div class="inner-section">
-      <div class="image center-elements">
-        <img src="Assets/featured-2.png" alt="Featured" />
-      </div>
-      <div class=" text center-elements">
-        <h3>Ultricies integer</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua.</p>
-        <a href="#"><button>Try Service <i class="fas fa-arrow-right"></i></button></a>
-      </div>
-    </div>
-  </div>
+  <?php 
+    $currentdiv = 1;
+    $query = $conn->query("SELECT * FROM `services` ORDER BY id DESC LIMIT 4");
+    while ($row=$query->fetch_array(MYSQLI_ASSOC)) {
+      if ($currentdiv == 1) {
+        echo "<div id='featured-1' class='section-1'>";
+        echo "<div class='inner-section center-elements'>";
+        echo "<div class='text center-elements'>";
+        echo "<h3>".$row['name']."</h3>";
+        echo "<p>".$row['description']."</p>";
+        echo "<a href='".$row['url']."'><button>Try Service <i class='fas fa-arrow-right'></i></button></a>";
+        echo "</div>";
+        echo "<div class='image center-elements'>";
+        echo "<img src='Assets/featured-1.png' alt='Featured' />";
+        echo "</div>";
+        echo "</div>";
+        echo "</div>";
+        $currentdiv = 2;
+      } else {
+        echo "<div id='featured-2' class='section-2'>";
+        echo "<div class='inner-section'>";
+        echo "<div class='image center-elements'>";
+        echo "<img src='Assets/featured-2.png' alt='Featured' />";
+        echo "</div>";
+        echo "<div class='text center-elements'>";
+        echo "<h3>".$row['name']."</h3>";
+        echo "<p>".$row['description']."</p>";
+        echo "<a href='".$row['url']."'><button>Try Service <i class='fas fa-arrow-right'></i></button></a>";
+        echo "</div>";
+        echo "</div>";
+        echo "</div>";
+        $currentdiv = 1;
+      }
+    }
+  ?>
 
   <div id="feedback" class="section-1">
     <h2>What people say about us?</h2>
@@ -189,7 +197,7 @@
         $query = $conn->query("SELECT * FROM `updates` ORDER BY id DESC LIMIT 4");
         while ($row=$query->fetch_array(MYSQLI_ASSOC)) {
           echo "<div class='cards ".$currenttheme."-theme'>";
-          echo "<i class='fa fa-quote-left fa-border'></i>";
+          echo "<i class='fa fa-clock fa-border fa-fade'></i>";
           echo "<h4>".$row['title']."</h4>";
           echo "<p>".$row['details']."</p>";
           echo "<p>".$row['date']."</p>";
