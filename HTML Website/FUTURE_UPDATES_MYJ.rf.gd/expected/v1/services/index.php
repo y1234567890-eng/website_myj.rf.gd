@@ -33,9 +33,9 @@
           $query = $conn->query("SELECT * FROM `navbar`");
           while ($row=$query->fetch_array(MYSQLI_ASSOC)) {
             if ($row['name'] == "Services") {
-              echo "<a id='services' href='".$row{'link'}."' style='color: #a6f2ff;'>".$row['name']."</a>";
+              echo "<a id='services' href='".$row['link']."' style='color: #a6f2ff;'>".$row['name']."</a>";
             } else {
-              echo "<a href='".$row{'link'}."'>".$row['name']."</a>";
+              echo "<a href='".$row['link']."'>".$row['name']."</a>";
             }
           }
           ?>
@@ -51,9 +51,9 @@
         $query = $conn->query("SELECT * FROM `navbar`");
         while ($row=$query->fetch_array(MYSQLI_ASSOC)) {
           if ($row['name'] == "Services") {
-            echo "<button><a id='home' href='".$row{'link'}."' style='color: #a6f2ff;'>".$row['name']."</a></button>";
+            echo "<button><a id='home' href='".$row['link']."' style='color: #a6f2ff;'>".$row['name']."</a></button>";
           } else {
-            echo "<button><a href='".$row{'link'}."'>".$row['name']."</a></button>";
+            echo "<button><a href='".$row['link']."'>".$row['name']."</a></button>";
           }
         }
       ?>

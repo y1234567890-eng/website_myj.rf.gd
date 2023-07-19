@@ -33,7 +33,7 @@
 
           $query = $conn->query("SELECT * FROM `navbar`");
           while ($row=$query->fetch_array(MYSQLI_ASSOC)) {
-            echo "<a href='".$row{'link'}."'>".$row['name']."</a>";
+            echo "<a href='".$row['link']."'>".$row['name']."</a>";
           }
           ?>
       </div>
@@ -47,7 +47,7 @@
       <?php 
         $query = $conn->query("SELECT * FROM `navbar`");
         while ($row=$query->fetch_array(MYSQLI_ASSOC)) {
-          echo "<button><a href='".$row{'link'}."'>".$row['name']."</a></button>";
+          echo "<button><a href='".$row['link']."'>".$row['name']."</a></button>";
         }
       ?>
     </div>
