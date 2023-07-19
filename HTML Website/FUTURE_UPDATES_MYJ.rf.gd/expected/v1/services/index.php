@@ -38,7 +38,14 @@
               echo "<a href='".$row['link']."'>".$row['name']."</a>";
             }
           }
-          ?>
+
+          
+          $filter = "";
+
+          if (isset($_GET)) {
+            $filter = $_GET['query'];
+          }      
+        ?>
       </div>
       <i id="mob-sidebar-btn" class='fa fa-bars'></i>
     </div>
@@ -68,22 +75,25 @@
   </div>
 
   <div class="space"></div>
-
-  <button style="filter: invert();" class="margined"><a>All</a></button>
-  <button class="margined"><a>Play Store</a></button>
-  <button class="margined"><a>Scratch</a></button>
-  <button class="margined"><a>YouTube</a></button>
+  <div style="display: flex;" class="center-elements center-text">
+  <form method="GET"><input name="query" type="hidden" value=""/><button type="submit" <?php if(strpos($filter, "category") !== false) {} else {echo "style='filter: invert();'";} ?> class="margined"><a>All</a></button></form>
+  <form method="GET"><input name="query" type="hidden" value="category:Services"/><button type="submit" <?php if ($filter == "category:Services") {echo "style='filter: invert();'";}?> class="margined"><a>Services</a></button></form>
+  <form method="GET"><input name="query" type="hidden" value="category:Play+Store"/><button type="submit" <?php if ($filter == "category:Play+Store") {echo "style='filter: invert();'";}?> class="margined"><a>Play Store</a></button></form>
+  <form method="GET"><input name="query" type="hidden" value="category:Scratch"/><button type="submit" <?php if ($filter == "category:Scratch") {echo "style='filter: invert();'";}?> class="margined"><a>Scratch</a></button></form>
+  <!-- <form method="GET"><button type="submit" class="margined"><a>YouTube</a></button></form> -->
   <!-- <button><a>Islamic Content (To be added with search option as filter)</a></button> -->
+  </div>
 
   <div class="search">
-    <form>
-      <input type="text" placeholder="Search for a service..." />
+    <form method="GET">
+      <?php echo "<input name='query' type='text' placeholder='Search for a service...' value='".$filter."'/>"; ?>
       <button type="submit"><i class="fas fa-search"></i></button>
     </form>
   </div>
 
   <?php
-    $query = $conn->query("SELECT * FROM `services`");
+    if ($filter != "category:Play+Store" && $filter != "category:Scratch") {
+    $query = $conn->query("SELECT * FROM `services` WHERE `name` LIKE '%".$filter."%'");
     while ($row=$query->fetch_array(MYSQLI_ASSOC)) {
       echo "<div class='item'>";
       echo "<div class='item-left'>";
@@ -106,8 +116,10 @@
       echo "</div>";
       echo "</div>";
     }
+    }
 
-    $query = $conn->query("SELECT * FROM `play-store`");
+    if ($filter != "category:Services" && $filter != "category:Scratch") {
+    $query = $conn->query("SELECT * FROM `play-store` WHERE `name` LIKE '%".$filter."%'");
     while ($row=$query->fetch_array(MYSQLI_ASSOC)) {
       echo "<div class='item'>";
       echo "<div class='item-left'>";
@@ -130,8 +142,10 @@
       echo "</div>";
       echo "</div>";
     }
+    }
 
-    $query = $conn->query("SELECT * FROM `scratch`");
+    if ($filter != "category:Play+Store" && $filter != "category:Services") {
+    $query = $conn->query("SELECT * FROM `scratch` WHERE `name` LIKE '%".$filter."%'");
     while ($row=$query->fetch_array(MYSQLI_ASSOC)) {
       echo "<div class='item'>";
       echo "<div class='item-left'>";
@@ -151,6 +165,7 @@
       echo "<button><a href='".$row['url']."'>Try service <i class='fas fa-arrow-right'></i></a></button>";
       echo "</div>";
       echo "</div>";
+    }
     }
   ?>
 
