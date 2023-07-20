@@ -74,10 +74,10 @@
             echo "<script>console.log('{$fail}' );</script>";
         }
 
-        $name = $conn -> real_escape_string($_POST['name']);
-        $email = $conn -> real_escape_string($_POST['email']);
-        $feedback = $conn -> real_escape_string($_POST['feedback']);
-        $conn -> query("INSERT INTO `feedback` ('name', 'email', 'message') VALUES ($name, $email, $feedback)");
+        $name=$conn->real_escape_string($_POST['name']);
+        $email=$conn->real_escape_string($_POST['email']);
+        $message=$conn->real_escape_string($_POST['feedback']);
+        $conn->query("INSERT INTO feedback (name,email,message) VALUES ('$name','$email','$message')");
       }
     ?>
 
