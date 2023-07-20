@@ -58,23 +58,48 @@
     <h2>Add your feedback to the list</h2>
     <div class="line"></div>
 
+    <?php 
+      if (isset($_POST['new'])) {
+        $host="sql112.epizy.com";
+        $dbuser="epiz_30389702";
+        $dbpassword="VjgiAEJdCn4";
+        $dbname="epiz_30389702_database";
+        $conn = new mysqli($host, $dbuser, $dbpassword, $dbname);
+        $success = "Success!";
+        $fail = "Not Connected";
+        if($conn) {
+            echo "<script>console.log('{$success}' );</script>";
+        }
+        else {
+            echo "<script>console.log('{$fail}' );</script>";
+        }
+
+        $name = $conn -> real_escape_string($_POST['name']);
+        $email = $conn -> real_escape_string($_POST['email']);
+        $feedback = $conn -> real_escape_string($_POST['feedback']);
+        $conn -> query("INSERT INTO `feedback` ('name', 'email', 'message') VALUES ($name, $email, $feedback)");
+      }
+    ?>
+
     <script src="../../../Assets/ckeditor/ckeditor.js"></script>
 
-    <form>
-      <input type="text" placeholder="Enter your name..." required /><br><br>
-      <input type="email" placeholder="Enter email for contact..." required /><br>
+    <form method="POST">
+      <input name="name" type="text" placeholder="Enter your name..." required /><br><br>
+      <input name="email" type="email" placeholder="Enter email for contact..." required /><br>
       <p style="color: #ccc; font-size: 10px;">Your email won't be visible to the public. It will be used for contact
         purposes only.</p><br>
-      <textarea id="feedback-editor" placeholder="Enter your feedback..." required></textarea><br>
+      <textarea name="feedback" id="feedback-editor" placeholder="Enter your feedback..." required></textarea><br>
       <input type="checkbox" id="agree-terms-privacy" required />
       <label for="agree-terms-privacy">I agree to the <a href="#">Terms of use</a> &amp; <a href="#">Privacy
           Policy</a></label><br><br>
-      <button type="submit">Submit</button>
+      <button name="new" type="submit">Submit</button>
     </form>
     <p>Please ensure that you enter a true and honest feedback, & please don't forget to tell us how we can improve our
       service.</p>
 
     <script>CKEDITOR.replace('feedback-editor')</script>
+
+    <?php if (isset($_POST['new'])) { echo "<div class='space'></div>"; echo "Submitted Successfully!"; }?>
   </div>
 
   <div id="footer" class="footer">

@@ -93,7 +93,11 @@
 
   <?php
     if ($filter != "category:Play+Store" && $filter != "category:Scratch") {
-    $query = $conn->query("SELECT * FROM `services` WHERE `name` LIKE '%".$filter."%'");
+      if (strpos($filter, "category") !== false) {
+        $query = $conn->query("SELECT * FROM `services`");
+      } else {
+        $query = $conn->query("SELECT * FROM `services` WHERE `name` LIKE '%".$filter."%'");
+      }
     while ($row=$query->fetch_array(MYSQLI_ASSOC)) {
       echo "<div class='item'>";
       echo "<div class='item-left'>";
@@ -119,7 +123,11 @@
     }
 
     if ($filter != "category:Services" && $filter != "category:Scratch") {
-    $query = $conn->query("SELECT * FROM `play-store` WHERE `name` LIKE '%".$filter."%'");
+      if (strpos($filter, "category") !== false) {
+        $query = $conn->query("SELECT * FROM `play-store`");
+      } else {
+        $query = $conn->query("SELECT * FROM `play-store` WHERE `name` LIKE '%".$filter."%'");
+      }
     while ($row=$query->fetch_array(MYSQLI_ASSOC)) {
       echo "<div class='item'>";
       echo "<div class='item-left'>";
@@ -145,7 +153,11 @@
     }
 
     if ($filter != "category:Play+Store" && $filter != "category:Services") {
-    $query = $conn->query("SELECT * FROM `scratch` WHERE `name` LIKE '%".$filter."%'");
+      if (strpos($filter, "category") !== false) {
+        $query = $conn->query("SELECT * FROM `scratch`");
+      } else {
+        $query = $conn->query("SELECT * FROM `scratch` WHERE `name` LIKE '%".$filter."%'");
+      }
     while ($row=$query->fetch_array(MYSQLI_ASSOC)) {
       echo "<div class='item'>";
       echo "<div class='item-left'>";

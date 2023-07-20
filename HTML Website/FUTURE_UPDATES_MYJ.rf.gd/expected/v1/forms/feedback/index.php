@@ -99,24 +99,30 @@
             echo "<p>".$row['message']."</p>";
             echo "</div>";
             echo "</div>";
-            echo "<div class='admin-content center-elements center-text'>";
-            echo "<div class='admin-profile'>";
-            echo "<img src='../../Assets/logo_no_bg.png' alt='MYJ Logo' />";
-            echo "</div>";
-            echo "<div class='admin-content-text'>";
-            echo "<h3>Admin reply</h3>";
-            echo "<p>".$row['reply']."</p>";
-            echo "</div>";
-            echo "</div>";
+            if ($row['reply'] != "No Admin Reply") {
+              echo "<div class='admin-content center-elements center-text'>";
+              echo "<div class='admin-profile'>";
+              echo "<img src='../../Assets/logo_no_bg.png' alt='MYJ Logo' />";
+              echo "</div>";
+              echo "<div class='admin-content-text'>";
+              echo "<h3>Admin reply</h3>";
+              echo "<p>".$row['reply']."</p>";
+              echo "</div>";
+              echo "</div>";
+            }
             echo "<div class='mobile-feedback'>";
             echo "<div class='content'>";
             echo "<h3>".$row['name']."</h3>";
             echo "<p>".$row['message']."</p>";
-            echo "<h3>Admin reply</h3>";
-            echo "<p>".$row['reply']."</p>";
+            if ($row['reply'] != "No Admin Reply") {
+              echo "<h3>Admin reply</h3>";
+              echo "<p>".$row['reply']."</p>";
+            }
             echo "</div>";
             echo "</div>";
             echo "</div>";
+            echo "<div class='space'></div>";
+            echo "<div class='space'></div>";
           }
           ?>
 
