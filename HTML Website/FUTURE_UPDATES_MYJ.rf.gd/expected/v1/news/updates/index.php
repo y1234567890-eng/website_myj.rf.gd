@@ -15,7 +15,7 @@
   <nav>
     <div id="inner-nav">
       <div id="logo">
-        <a href="https://myj.rf.gd/expected/v1/"><img src="Assets/logo.png" width="90px" alt="logo"></a>
+        <a href="https://myj.rf.gd/expected/v1/"><img src="../../Assets/logo.png" width="90px" alt="logo"></a>
       </div>
       <div id="nav-btns">
         <?php
@@ -33,11 +33,7 @@
 
           $query = $conn->query("SELECT * FROM `navbar`");
           while ($row=$query->fetch_array(MYSQLI_ASSOC)) {
-            if ($row['name'] == "Home") {
-              echo "<a id='home' href='".$row['link']."' style='color: #a6f2ff;'>".$row['name']."</a>";
-            } else {
-              echo "<a href='".$row['link']."'>".$row['name']."</a>";
-            }
+            echo "<a href='".$row['link']."'>".$row['name']."</a>";
           }
           ?>
       </div>
@@ -51,11 +47,7 @@
       <?php 
         $query = $conn->query("SELECT * FROM `navbar`");
         while ($row=$query->fetch_array(MYSQLI_ASSOC)) {
-          if ($row['name'] == "Home") {
-            echo "<button><a id='home' href='".$row['link']."' style='color: #a6f2ff;'>".$row['name']."</a></button>";
-          } else {
-            echo "<button><a href='".$row['link']."'>".$row['name']."</a></button>";
-          }
+          echo "<button><a href='".$row['link']."'>".$row['name']."</a></button>";
         }
       ?>
     </div>
@@ -67,6 +59,47 @@
       <h2>Get to know the latest happenings on MYJ World</h2>
     </div>
   </div>
+
+  <div class="space"></div>
+
+<?php
+        $host="sql112.epizy.com";
+        $dbuser="epiz_30389702";
+        $dbpassword="VjgiAEJdCn4";
+        $dbname="epiz_30389702_admin";
+        $conn = new mysqli($host, $dbuser, $dbpassword, $dbname);
+        if($conn) {
+            echo "<script>console.log('Success');</script>";
+        }
+        else {
+            echo "<script>console.log('Not Connected!');</script>";
+        }
+
+        $query = $conn->query("SELECT * FROM `updates`ORDER BY id DESC");
+        while ($row=$query->fetch_array(MYSQLI_ASSOC)) {
+          echo "<div class='single-message center-elements center-text'>";
+          echo "<div class='user-content center-elements center-text'>";
+          echo "<div class='profile'>";
+          echo "<i class='fa fa-pen-to-square'></i>";
+          echo "</div>";
+          echo "<div class='content'>";
+          echo "<h3><span class='id-no'>".$row['id']."    </span>".$row['title']."</h3>";
+          echo "<p>".$row['details']."</p>";
+          echo "<p>".$row['date']."</p>";
+          echo "</div>";
+          echo "</div>";
+          echo "<div class='mobile-feedback'>";
+          echo "<div class='content'>";
+          echo "<h3><span class='id-no'>".$row['id']."</span>  ".$row['title']."</h3>";
+          echo "<p>".$row['details']."</p>";
+          echo "<p style='text-align: right; width: 90%;'>".$row['date']."</p>";
+          echo "</div>";
+          echo "</div>";
+          echo "</div>";
+          echo "<div class='space'></div>";
+          echo "<div class='space'></div>";
+        }
+        ?>
 
   <div id="footer" class="footer">
     <div id="footer-flex" class="center-elements">

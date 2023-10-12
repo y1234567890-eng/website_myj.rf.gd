@@ -124,7 +124,7 @@
         echo "<a href='".$row['url']."'><button>Try Service <i class='fas fa-arrow-right'></i></button></a>";
         echo "</div>";
         echo "<div class='image center-elements'>";
-        echo "<img src='Assets/featured-1.png' alt='Featured' />";
+        echo "<img src='".$row['homepage_image']."' alt='Featured' />";
         echo "</div>";
         echo "</div>";
         echo "</div>";
@@ -133,7 +133,7 @@
         echo "<div id='featured-2' class='section-2'>";
         echo "<div class='inner-section'>";
         echo "<div class='image center-elements'>";
-        echo "<img src='Assets/featured-2.png' alt='Featured' />";
+        echo "<img src='".$row['homepage_image']."' alt='Featured' />";
         echo "</div>";
         echo "<div class='text center-elements'>";
         echo "<h3>".$row['name']."</h3>";
