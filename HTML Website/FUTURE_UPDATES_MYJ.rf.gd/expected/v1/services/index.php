@@ -77,7 +77,7 @@
   <div class="space"></div>
   <div style="display: flex;" class="center-elements center-text">
   <form method="GET"><input name="query" type="hidden" value=""/><button type="submit" <?php if(strpos($filter, "category") !== false) {} else {echo "style='filter: invert();'";} ?> class="margined"><a>All</a></button></form>
-  <form method="GET"><input name="query" type="hidden" value="category:Services"/><button type="submit" <?php if ($filter == "category:Services") {echo "style='filter: invert();'";}?> class="margined"><a>Services</a></button></form>
+  <form method="GET"><input name="query" type="hidden" value="category:Services"/><button type="submit" <?php if ($filter == "category:Services") {echo "style='filter: invert();'";}?> class="margined"><a>Online Services</a></button></form>
   <form method="GET"><input name="query" type="hidden" value="category:Play+Store"/><button type="submit" <?php if ($filter == "category:Play+Store") {echo "style='filter: invert();'";}?> class="margined"><a>Play Store</a></button></form>
   <form method="GET"><input name="query" type="hidden" value="category:Scratch"/><button type="submit" <?php if ($filter == "category:Scratch") {echo "style='filter: invert();'";}?> class="margined"><a>Scratch</a></button></form>
   <!-- <form method="GET"><button type="submit" class="margined"><a>YouTube</a></button></form> -->

@@ -173,7 +173,7 @@
       ?>
     </div>
     <br>
-    <a href="#"><button><i class="fa fa-chevron-right"></i> See all</button></a>
+    <a href="https://myj.rf.gd/expected/v1/forms/feedback/"><button><i class="fa fa-chevron-right"></i> See all</button></a>
   </div>
 
   <div id="updates" class="section-2">
@@ -215,7 +215,7 @@
       ?>
     </div>
     <br>
-    <a href="#"><button><i class="fa fa-chevron-right"></i> See all</button></a>
+    <a href="https://myj.rf.gd/expected/v1/news/updates/"><button><i class="fa fa-chevron-right"></i> See all</button></a>
   </div>
 
   <div id="footer" class="footer">
