@@ -150,6 +150,34 @@
       echo "</div>";
       echo "</div>";
     }
+
+    if (strpos($filter, "category") !== false) {
+      $query = $conn->query("SELECT * FROM `play-store-other`");
+    } else {
+      $query = $conn->query("SELECT * FROM `play-store-other` WHERE `name` LIKE '%".$filter."%'");
+    }
+  while ($row=$query->fetch_array(MYSQLI_ASSOC)) {
+    echo "<div class='item'>";
+    echo "<div class='item-left'>";
+    echo "<img src='".$row['logo']."' alt='Logo' />";
+    echo "<h2>".$row['name2']."</h2>";
+    echo "<p>Price: ".$row['price']."</p>";
+    echo "<p>Category: Play Store</p>";
+    echo "<button><a href='".$row['url']."'>Try service <i class='fas fa-arrow-right'></i></a></button>";
+    echo "</div>";
+    echo "<div class='item-right'>";
+    echo "<h2>".$row['name2']."</h2>";
+    echo "<p>".$row['description']."</p>";
+    echo "</div>";
+    echo "<div class='item-mobile'>";
+    echo "<img src='".$row['logo']."' alt='Logo' />";
+    echo "<h2>".$row['name']."</h2>";
+    echo "<p>Price: ".$row['price']."</p>";
+    echo "<p>".$row['description']."</p>";
+    echo "<button><a href='".$row['url']."'>Try service <i class='fas fa-arrow-right'></i></a></button>";
+    echo "</div>";
+    echo "</div>";
+  }
     }
 
     if ($filter != "category:Play+Store" && $filter != "category:Services") {
