@@ -143,13 +143,13 @@
       ?>
     </div>
     <div id="policy">
-      <a href="#">Terms of use</a> <br><br>
-      <a href="#">Privacy Policy</a>
+      <a href="../../policies/terms-of-use/">Terms of use</a> <br><br>
+      <a href="../../policies/privacy-policy/">Privacy Policy</a>
     </div>
   </div>
 
   <div class="popup">
-    <p>By using our website, you agree to our <a href="#"> Terms of Use</a> &amp; <a href="#">Privacy Policy</a></p>
+    <p>By using our website, you agree to our <a href="../../policies/terms-of-use/"> Terms of Use</a> &amp; <a href="../../policies/privacy-policy/">Privacy Policy</a></p>
     <button class="popup-btn">Accept & Continue</button>
   </div>
 

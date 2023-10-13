@@ -90,7 +90,7 @@
         purposes only.</p><br>
       <textarea name="feedback" id="feedback-editor" placeholder="Enter your feedback..." required></textarea><br>
       <input type="checkbox" id="agree-terms-privacy" required />
-      <label for="agree-terms-privacy">I agree to the <a href="#">Terms of use</a> &amp; <a href="#">Privacy
+      <label for="agree-terms-privacy">I agree to the <a href="../../../policies/terms-of-use/">Terms of use</a> &amp; <a href="../../../policies/privacy-policy/">Privacy
           Policy</a></label><br><br>
       <button name="new" type="submit">Submit</button>
     </form>
@@ -131,13 +131,13 @@
       ?>
     </div>
     <div id="policy">
-      <a href="#">Terms of use</a> <br><br>
-      <a href="#">Privacy Policy</a>
+      <a href="../../../policies/terms-of-use/">Terms of use</a> <br><br>
+      <a href="../../../policies/privacy-policy/">Privacy Policy</a>
     </div>
   </div>
 
   <div class="popup">
-    <p>By using our website, you agree to our <a href="#"> Terms of Use</a> &amp; <a href="#">Privacy Policy</a></p>
+    <p>By using our website, you agree to our <a href="../../../policies/terms-of-use/"> Terms of Use</a> &amp; <a href="../../../policies/privacy-policy/">Privacy Policy</a></p>
     <button class="popup-btn">Accept & Continue</button>
   </div>
 
